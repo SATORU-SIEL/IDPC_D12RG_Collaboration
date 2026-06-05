@@ -1,0 +1,34 @@
+{
+  "U_phi": [
+    [
+      0,
+      1
+    ],
+    [
+      -1,
+      3
+    ]
+  ],
+  "trace_ladder_A0_to_A12": [
+    2,
+    3,
+    7,
+    18,
+    47,
+    123,
+    322,
+    843,
+    2207,
+    5778,
+    15127,
+    39603,
+    103682
+  ],
+  "primitive_trace_defect": 5,
+  "normalization_ladder": [
+    5,
+    10,
+    20
+  ],
+  "d12_readout": "readout-level structure only; do not assume U_phi^12 = I"
+}

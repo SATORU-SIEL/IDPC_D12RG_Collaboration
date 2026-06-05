@@ -1,0 +1,15 @@
+status,exclusion_reason,n_rows,slope_no_intercept,pearson_r,abs_pearson_r,r2_no_intercept,null_abs_r_mean,null_abs_r_sd,z_score,raw_p,source_file,condition,n_perm,fdr_q
+tested,,226,4.350922700970081,0.8876638947564308,0.8876638947564308,0.7875328850344363,0.0527698131762481,0.0382291992211664,21.839172637388806,0.000999000999000999,IDPC_Reproduction/J_dh_kappa_pooled_v2.csv,observed,1000,0.000999000999000999
+excluded,fewer than 5 rows with J and dh,0,,,,,,,,,IDPC_Reproduction_mm_derangement/J_dh_kappa_pooled_v2.csv,control,1000,
+excluded,fewer than 5 rows with J and dh,0,,,,,,,,,IDPC_Reproduction_mm_random/J_dh_kappa_pooled_v2.csv,control,1000,
+excluded,fewer than 5 rows with J and dh,0,,,,,,,,,IDPC_Reproduction_mm_reverse/J_dh_kappa_pooled_v2.csv,control,1000,
+excluded,fewer than 5 rows with J and dh,0,,,,,,,,,IDPC_Reproduction_mm_shift1/J_dh_kappa_pooled_v2.csv,control,1000,
+tested,,44,3.833718792920536,0.9165818549142489,0.9165818549142489,0.8365208436954701,0.12241685515040729,0.09092675116370544,8.734118283122411,0.000999000999000999,IDPC_Reproduction_random/J_dh_kappa_pooled_v2.csv,control,1000,0.000999000999000999
+excluded,missing J or dh columns,780,,,,,,,,,IDPC_Reproduction_surrogate/J_dh_kappa_pooled_v2.csv,control,1000,
+excluded,missing J or dh columns,780,,,,,,,,,IDPC_Reproduction_surrogate_btc/J_dh_kappa_pooled_v2.csv,control,1000,
+excluded,missing J or dh columns,780,,,,,,,,,IDPC_Reproduction_surrogate_spx/J_dh_kappa_pooled_v2.csv,control,1000,
+tested,,237,4.441073568178564,0.8781991745778548,0.8781991745778548,0.7712229046365733,0.054342710131463814,0.041347035120922526,19.925406066891146,0.000999000999000999,backups/mm_fullnb_derangement/J_dh_kappa_pooled_v2.csv,control,1000,0.000999000999000999
+tested,,223,4.387702234480446,0.8890144486917931,0.8890144486917931,0.7894266013284772,0.05468979075223223,0.04019729854883279,20.75573951632596,0.000999000999000999,backups/mm_fullnb_random/J_dh_kappa_pooled_v2.csv,control,1000,0.000999000999000999
+tested,,241,4.455199087721192,0.8910300145860158,0.8910300145860158,0.7939078181397944,0.05152769524776616,0.03808760629505176,22.04135153138557,0.000999000999000999,backups/mm_fullnb_reverse/J_dh_kappa_pooled_v2.csv,control,1000,0.000999000999000999
+tested,,223,4.505611296779662,0.8893910468995972,0.8893910468995972,0.7909877209655626,0.05239481289233406,0.038966261374606195,21.480024115239413,0.000999000999000999,backups/mm_fullnb_shift1/J_dh_kappa_pooled_v2.csv,control,1000,0.000999000999000999
+tested,,226,4.350922700970081,0.8876638947564308,0.8876638947564308,0.7875328850344363,0.05290630771871362,0.03998035457665101,20.879194191169713,0.000999000999000999,backups/mm_original_state/J_dh_kappa_pooled_v2.csv,other,1000,0.000999000999000999
