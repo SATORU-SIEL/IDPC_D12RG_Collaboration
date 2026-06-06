@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 reports/generated/
 data/raw/
+external_audits/

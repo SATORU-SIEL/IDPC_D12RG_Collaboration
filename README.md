@@ -31,6 +31,7 @@ The target is the IDPC-derived structural layer:
 - [Stage A+ structural holonomy loop summary](reports/Stage_A_plus_structural_holonomy_loop_summary.md)
 - [Stage B exploratory GKS / Kuramoto summary](reports/Stage_B_exploratory_gks_kuramoto_summary.md)
 - [Stage B Ricci phase-sync carrier summary](reports/Stage_B_ricci_phase_sync_carrier_summary.md)
+- [Stage B2 topology-aware carrier audit summary](reports/Stage_B2_topology_aware_carrier_audit_summary.md)
 
 Published result files:
 
@@ -51,6 +52,9 @@ Published result files:
 - [Stage B Kuramoto/Ricci summary CSV](reports/Stage_B_kuramoto_ricci_summary_results.csv)
 - [Stage B Ricci phase-sync carrier CSV](reports/Stage_B_ricci_phase_sync_carrier_results.csv)
 - [Stage B Ricci eps72 restoring carrier CSV](reports/Stage_B_ricci_eps72_restoring_carrier_results.csv)
+- [Stage B2 topology-aware carrier audit CSV](reports/Stage_B2_topology_aware_carrier_audit_results.csv)
+- [Stage B2 topology loop inventory CSV](reports/Stage_B2_topology_loop_inventory.csv)
+- [Stage B2 topology null controls CSV](reports/Stage_B2_topology_null_controls.csv)
 
 ## Scope
 
@@ -82,6 +86,7 @@ Implemented:
 - `scripts/test_IDPC_structural_holonomy_loop.py`
 - `scripts/test_Stage_B_gks_kuramoto_exploratory.py`
 - `scripts/test_Stage_B_ricci_phase_sync_carrier.py`
+- `scripts/test_Stage_B2_topology_aware_carrier_audit.py`
 
 Example:
 
@@ -117,4 +122,8 @@ python3 scripts/test_Stage_B_gks_kuramoto_exploratory.py \
 python3 scripts/test_Stage_B_ricci_phase_sync_carrier.py \
   --input-root /path/to/IDPC_Reproduction \
   --output-dir reports/generated
+
+python3 scripts/test_Stage_B2_topology_aware_carrier_audit.py \
+  --input-root . \
+  --output-dir reports
 ```
