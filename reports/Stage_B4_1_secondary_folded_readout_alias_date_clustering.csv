@@ -1,0 +1,7 @@
+event_class,n_events,n_dates,max_date_fraction,top_date,top_date_count
+FES_phase_transition,192,7,0.5677083333333334,2026-01-31,109
+eps72_restoration_onset,147,7,0.5850340136054422,2026-01-31,86
+h_zero_crossing,1309,7,0.5485103132161956,2026-01-31,718
+high_boundary_impulse_J,57,6,0.5789473684210527,2026-01-31,33
+residual_contraction_low_distance,57,7,0.47368421052631576,2026-01-31,27
+ricci_phase_sync_high_lock_session,7,5,0.42857142857142855,2026-01-31,3

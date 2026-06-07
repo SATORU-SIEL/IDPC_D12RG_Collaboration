@@ -1,0 +1,13 @@
+anchor_name,event_class,group_col,n_leave_one,c10_best_rate,c12_best_rate,c24_best_rate,mean_C10_minus_C12,min_C10_minus_C12,mean_D24_minus_C12
+utc_annual_orbital_phase,FES_phase_transition,event_date_utc,7,1.0,0.0,0.0,0.06868355886430397,0.04727946089061352,-0.0194427821408047
+utc_annual_orbital_phase,FES_phase_transition,label,26,1.0,0.0,0.0,0.06603981309875002,0.05576849344061874,-0.01863170882622691
+utc_annual_orbital_phase,eps72_restoration_onset,event_date_utc,7,1.0,0.0,0.0,0.08077978523464747,0.05434447090480332,-0.03030155069439544
+utc_annual_orbital_phase,eps72_restoration_onset,label,26,1.0,0.0,0.0,0.07812652391493839,0.062003157507233175,-0.030005272295862532
+utc_annual_orbital_phase,h_zero_crossing,event_date_utc,7,1.0,0.0,0.0,0.08608516554834424,0.05946282526219282,-0.02103220832877214
+utc_annual_orbital_phase,h_zero_crossing,label,26,1.0,0.0,0.0,0.08311314515318521,0.05946282526219282,-0.021903734421914598
+utc_annual_orbital_phase,high_boundary_impulse_J,event_date_utc,6,1.0,0.0,0.0,0.07323066921851251,0.03632946661567227,-0.04949221418320704
+utc_annual_orbital_phase,high_boundary_impulse_J,label,24,1.0,0.0,0.0,0.06834695055296826,0.05336777873049081,-0.04290731973129152
+utc_annual_orbital_phase,residual_contraction_low_distance,event_date_utc,7,1.0,0.0,0.0,0.07673241709827838,0.04930966563556782,-0.03378302023697572
+utc_annual_orbital_phase,residual_contraction_low_distance,label,23,1.0,0.0,0.0,0.07557785258690572,0.06099764862259094,-0.03216884601849945
+utc_annual_orbital_phase,ricci_phase_sync_high_lock_session,event_date_utc,5,1.0,0.0,0.0,0.13351838923006512,0.0847258720537114,-0.030760872736191214
+utc_annual_orbital_phase,ricci_phase_sync_high_lock_session,label,7,1.0,0.0,0.0,0.13807308468326654,0.0847258720537114,-0.04845128421741163

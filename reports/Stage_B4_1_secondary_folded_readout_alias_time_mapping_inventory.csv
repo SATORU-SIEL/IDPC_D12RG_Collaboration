@@ -1,0 +1,7 @@
+event_class,source_file,time_mapping_rule,n_events,n_labels,first_utc,last_utc
+FES_phase_transition,event_level_with_fes_phase_TRUE_RICCI.csv,event-level task_idx joined to quantum mid_utc,192,26,2025-12-21 23:02:56.659500+00:00,2026-02-01 10:12:10.246500+00:00
+eps72_restoration_onset,Chapter3/ricci_eps72_restoring_test.csv,eps72 row index mapped to nearest quantum task real UTC using per-label source length,147,26,2025-12-21 23:02:16.251000+00:00,2026-02-01 10:12:04.097500+00:00
+h_zero_crossing,Chapter7/new_phi_dataset.csv,h_zero idx_in_session mapped to nearest EEG bin real UTC using per-label source length,1309,26,2025-12-21 23:02:15.876000+00:00,2026-02-01 10:12:28.983500+00:00
+high_boundary_impulse_J,event_level_with_fes_phase_TRUE_RICCI.csv,event-level task_idx joined to quantum mid_utc,57,24,2025-12-21 23:02:28.523000+00:00,2026-02-01 10:00:52.532500+00:00
+residual_contraction_low_distance,event_level_with_fes_phase_TRUE_RICCI.csv,event-level task_idx joined to quantum mid_utc,57,23,2025-12-21 23:02:28.523000+00:00,2026-02-01 10:11:57.889500+00:00
+ricci_phase_sync_high_lock_session,Chapter3/ricci_phase_sync_summary.csv,Ricci session summary mapped to quantum session midpoint real UTC,7,7,2025-12-21 23:03:33.902500+00:00,2026-02-01 09:49:41.355000+00:00
