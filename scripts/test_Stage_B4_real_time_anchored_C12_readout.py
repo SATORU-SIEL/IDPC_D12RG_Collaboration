@@ -332,16 +332,18 @@ def run_audit(input_root: Path, output_dir: Path, n_rotations: int, n_random: in
         basis_scores = sub.pivot(index="event_class", columns="basis", values="readout_score")
         for event_class, values in basis_scores.iterrows():
             c12 = float(values.get(PRIMARY_BASIS, np.nan))
-            alternatives = [float(values.get(b, np.nan)) for b in BASES if b != PRIMARY_BASIS]
-            alternatives = [x for x in alternatives if np.isfinite(x)]
+            alternative_pairs = [(b, float(values.get(b, np.nan))) for b in BASES if b != PRIMARY_BASIS]
+            alternative_pairs = [(b, x) for b, x in alternative_pairs if np.isfinite(x)]
             c24 = float(values.get(LIFT_BASIS, np.nan))
+            best_basis, best_score = max(alternative_pairs, key=lambda item: item[1]) if alternative_pairs else (np.nan, np.nan)
             contrasts.append(
                 {
                     "anchor_name": anchor_name,
                     "event_class": event_class,
                     "C12_readout_score": c12,
-                    "best_alternative_score": max(alternatives) if alternatives else np.nan,
-                    "C12_vs_best_alternative": c12 - max(alternatives) if alternatives else np.nan,
+                    "best_alternative_basis": best_basis,
+                    "best_alternative_score": best_score,
+                    "C12_vs_best_alternative": c12 - best_score if np.isfinite(best_score) else np.nan,
                     "D24_Phi24_lift_score": c24,
                     "D24_minus_C12": c24 - c12 if np.isfinite(c24) and np.isfinite(c12) else np.nan,
                 }
@@ -435,6 +437,12 @@ def write_summary(path: Path, result: pd.DataFrame, contrast: pd.DataFrame, inve
         f"- event classes tested: {primary['event_class'].nunique()}",
         f"- bases tested: {', '.join('C' + str(b) for b in BASES)}",
         f"- exploratory real-time C12 candidates: {len(candidates)}",
+        "",
+        "## Real UTC Coverage",
+        "",
+        f"- first mapped event UTC: {inventory['first_utc'].min()}",
+        f"- last mapped event UTC: {inventory['last_utc'].max()}",
+        "- this is a real timestamp audit, not a session-normalized proxy audit",
         "",
         "## Primary C12 Annual/Orbital Phase Rows",
         "",
