@@ -41,6 +41,9 @@ the primary discriminator.
 Primary event source:
 
 - `event_level_with_fes_phase_TRUE_RICCI.csv`
+- `Chapter7/new_phi_dataset.csv`
+- `Chapter3/ricci_eps72_restoring_test.csv`
+- `Chapter3/ricci_phase_sync_summary.csv`
 
 Required columns:
 
@@ -50,6 +53,15 @@ Required columns:
 - `distance`
 - `phase`
 - `fes_phase`
+- `idx_in_session`
+- `h`
+- `dh`
+- `eps72_deg`
+- `deps72_deg`
+- `restore`
+- `n_points`
+- `psi_lock_R`
+- `circ_mean_deg`
 
 ## Endogenous Event Classes
 
@@ -64,7 +76,33 @@ The frozen endogenous event classes are:
 3. `FES_phase_transition`
    - within-label change in `fes_phase`
 
+4. `h_zero_crossing`
+   - within-session sign crossing of the `h=0` availability boundary
+
+5. `eps72_restoration_onset`
+   - within-session `restore` 0->1 onset in the eps72 restoration table
+
+6. `ricci_phase_sync_high_lock_session`
+   - top-quartile session-level `psi_lock_R`
+   - phase from `circ_mean_deg`
+   - used as a frozen proxy for Ricci phase-sync increase events because the
+     available source is a session-level phase-sync summary, not an event-level
+     increase time series
+
 These event definitions are fixed before execution.
+
+## Luke/C.A.T. Alignment
+
+This expanded rerun keeps the primary Luke/D12RG test narrow:
+
+- C12(1,2) remains the fixed primary topology.
+- Event-conditioning is the moving variable.
+- The primary discriminator remains endogenous vs time-shifted vs random-event
+  schedules on the same topology, same dynamics, and same scoring.
+- The primary endpoint remains bounded, non-collapsed, differentiated recovery,
+  not mere phase synchronization.
+- Subthreshold noise and V4 process architecture are not introduced into this
+  frozen B3 run; they remain later B3b / architecture candidates.
 
 ## Control Schedules
 
@@ -176,6 +214,9 @@ If a positive signal appears, a later event-class ablation pass may separate:
 - boundary impulse seeds only
 - residual contraction seeds only
 - FES transition seeds only
+- h=0 availability-boundary seeds only
+- eps72 restoration-onset seeds only
+- Ricci phase-sync proxy seeds only
 
 ## Frozen Execution Defaults
 

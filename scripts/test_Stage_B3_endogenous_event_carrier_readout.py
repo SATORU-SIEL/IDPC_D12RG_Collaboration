@@ -22,6 +22,17 @@ PRIMARY_TOPOLOGY = "C12(1,2)"
 PRIMARY_CONDITIONS = ("endogenous", "time_shifted", "random_event")
 SECONDARY_TOPOLOGIES = ("C8(1)", "dodecahedron", "icosahedron")
 EVENT_FILE = "event_level_with_fes_phase_TRUE_RICCI.csv"
+PHI_FILE = "Chapter7/new_phi_dataset.csv"
+EPS72_FILE = "Chapter3/ricci_eps72_restoring_test.csv"
+RICCI_PHASE_SYNC_FILE = "Chapter3/ricci_phase_sync_summary.csv"
+EVENT_CLASSES = [
+    "high_boundary_impulse_J",
+    "residual_contraction_low_distance",
+    "FES_phase_transition",
+    "h_zero_crossing",
+    "eps72_restoration_onset",
+    "ricci_phase_sync_high_lock_session",
+]
 
 
 def unique_edges(n_nodes: int, jumps: tuple[int, ...]) -> list[tuple[int, int]]:
@@ -175,6 +186,13 @@ def bh_fdr(p_values: list[float]) -> list[float]:
     return q.tolist()
 
 
+def canonical_label(value: object) -> str:
+    text = str(value)
+    if "_co_recon" in text:
+        return text.split("_co_recon", 1)[0]
+    return text
+
+
 def load_event_table(input_root: Path) -> pd.DataFrame:
     path = input_root / EVENT_FILE
     if not path.exists():
@@ -185,22 +203,154 @@ def load_event_table(input_root: Path) -> pd.DataFrame:
     if missing:
         raise ValueError(f"{path} missing columns: {missing}")
     df = df.sort_values(["label", "task_idx"]).reset_index(drop=True)
+    df["label"] = df["label"].map(canonical_label)
     return df
 
 
-def add_event_classes(df: pd.DataFrame) -> pd.DataFrame:
-    out = df.copy()
-    j_cut = out["J"].abs().quantile(0.75)
-    distance_cut = out["distance"].quantile(0.25)
-    out["high_boundary_impulse_J"] = out["J"].abs() >= j_cut
-    out["residual_contraction_low_distance"] = out["distance"] <= distance_cut
-    out["FES_phase_transition"] = False
-    for _, idx in out.groupby("label").groups.items():
-        sub = out.loc[idx].sort_values("task_idx")
+def append_event(
+    rows: list[dict[str, object]],
+    event_class: str,
+    source_file: str,
+    label: object,
+    task_idx: object,
+    phase: object,
+    strength: object,
+    event_rule: str,
+) -> None:
+    rows.append(
+        {
+            "event_class": event_class,
+            "source_file": source_file,
+            "label": canonical_label(label),
+            "task_idx": float(task_idx),
+            "phase": float(phase) if pd.notna(phase) else 0.0,
+            "strength": float(strength) if pd.notna(strength) else 1.0,
+            "event_rule": event_rule,
+        }
+    )
+
+
+def load_b3_event_rows(input_root: Path) -> pd.DataFrame:
+    rows: list[dict[str, object]] = []
+
+    primary = load_event_table(input_root)
+    j_cut = primary["J"].abs().quantile(0.75)
+    distance_cut = primary["distance"].quantile(0.25)
+    for _, row in primary[primary["J"].abs() >= j_cut].iterrows():
+        append_event(
+            rows,
+            "high_boundary_impulse_J",
+            EVENT_FILE,
+            row["label"],
+            row["task_idx"],
+            row["phase"],
+            abs(row["J"]),
+            "top quartile of absolute J in the event-level IDPC table",
+        )
+    for _, row in primary[primary["distance"] <= distance_cut].iterrows():
+        append_event(
+            rows,
+            "residual_contraction_low_distance",
+            EVENT_FILE,
+            row["label"],
+            row["task_idx"],
+            row["phase"],
+            1.0 / (1.0 + abs(float(row["distance"]))),
+            "bottom quartile of distance in the event-level IDPC table",
+        )
+    for _, idx in primary.groupby("label").groups.items():
+        sub = primary.loc[idx].sort_values("task_idx")
         transitions = sub["fes_phase"].astype(str).ne(sub["fes_phase"].astype(str).shift(1))
         transitions.iloc[0] = False
-        out.loc[sub.index, "FES_phase_transition"] = transitions.to_numpy()
-    return out
+        for _, row in sub[transitions.to_numpy()].iterrows():
+            append_event(
+                rows,
+                "FES_phase_transition",
+                EVENT_FILE,
+                row["label"],
+                row["task_idx"],
+                row["phase"],
+                1.0,
+                "within-label change of FES phase",
+            )
+
+    phi_path = input_root / PHI_FILE
+    if not phi_path.exists():
+        raise FileNotFoundError(f"missing h=0 crossing source file: {phi_path}")
+    phi = pd.read_csv(phi_path)
+    required_phi = {"label", "idx_in_session", "h", "dh"}
+    missing_phi = sorted(required_phi - set(phi.columns))
+    if missing_phi:
+        raise ValueError(f"{phi_path} missing columns: {missing_phi}")
+    phi["label"] = phi["label"].map(canonical_label)
+    for _, sub in phi.sort_values(["label", "idx_in_session"]).groupby("label"):
+        h = sub["h"].astype(float)
+        prev_h = h.shift(1)
+        crossing = (h * prev_h <= 0.0) & prev_h.notna() & h.notna()
+        for _, row in sub[crossing].iterrows():
+            phase_value = row["phi_clean"] if "phi_clean" in row and pd.notna(row["phi_clean"]) else 0.0
+            append_event(
+                rows,
+                "h_zero_crossing",
+                PHI_FILE,
+                row["label"],
+                row["idx_in_session"],
+                phase_value,
+                max(abs(float(row["dh"])), 1e-9),
+                "within-session sign crossing of h=0 availability boundary",
+            )
+
+    eps72_path = input_root / EPS72_FILE
+    if not eps72_path.exists():
+        raise FileNotFoundError(f"missing eps72 restoration source file: {eps72_path}")
+    eps72 = pd.read_csv(eps72_path)
+    required_eps72 = {"label", "eps72_deg", "deps72_deg", "restore"}
+    missing_eps72 = sorted(required_eps72 - set(eps72.columns))
+    if missing_eps72:
+        raise ValueError(f"{eps72_path} missing columns: {missing_eps72}")
+    eps72["label"] = eps72["label"].map(canonical_label)
+    eps72["_idx"] = eps72.groupby("label").cumcount()
+    for _, sub in eps72.sort_values(["label", "_idx"]).groupby("label"):
+        restore = sub["restore"].astype(int)
+        onset = restore.eq(1) & restore.shift(1, fill_value=0).ne(1)
+        for _, row in sub[onset].iterrows():
+            append_event(
+                rows,
+                "eps72_restoration_onset",
+                EPS72_FILE,
+                row["label"],
+                row["_idx"],
+                np.deg2rad(float(row["eps72_deg"])),
+                max(abs(float(row["deps72_deg"])), 1e-9),
+                "within-session restore 0->1 onset in eps72 restoration table",
+            )
+
+    ricci_path = input_root / RICCI_PHASE_SYNC_FILE
+    if not ricci_path.exists():
+        raise FileNotFoundError(f"missing Ricci phase-sync source file: {ricci_path}")
+    ricci = pd.read_csv(ricci_path)
+    required_ricci = {"label", "n_points", "psi_lock_R", "circ_mean_deg"}
+    missing_ricci = sorted(required_ricci - set(ricci.columns))
+    if missing_ricci:
+        raise ValueError(f"{ricci_path} missing columns: {missing_ricci}")
+    ricci["label"] = ricci["label"].map(canonical_label)
+    lock_cut = ricci["psi_lock_R"].quantile(0.75)
+    for _, row in ricci[ricci["psi_lock_R"] >= lock_cut].iterrows():
+        append_event(
+            rows,
+            "ricci_phase_sync_high_lock_session",
+            RICCI_PHASE_SYNC_FILE,
+            row["label"],
+            max(float(row["n_points"]) / 2.0, 0.0),
+            np.deg2rad(float(row["circ_mean_deg"])),
+            float(row["psi_lock_R"]),
+            "top quartile session-level Ricci psi_lock_R proxy for phase-sync increase events",
+        )
+
+    events = pd.DataFrame(rows)
+    if events.empty:
+        raise ValueError("no Stage B3 endogenous events were extracted")
+    return events.sort_values(["event_class", "label", "task_idx"]).reset_index(drop=True)
 
 
 def build_event_schedule(
@@ -209,22 +359,17 @@ def build_event_schedule(
     steps: int,
     n_nodes: int,
 ) -> tuple[list[dict[str, float]], dict[str, float]]:
-    rows = df[df[event_class].astype(bool)].copy()
+    rows = df[df["event_class"].eq(event_class)].copy()
     if rows.empty:
         return [], {"n_events": 0}
-    min_task = float(df["task_idx"].min())
-    max_task = float(df["task_idx"].max())
+    min_task = float(rows["task_idx"].min())
+    max_task = float(rows["task_idx"].max())
     denom = max(max_task - min_task, 1.0)
     schedules = []
     for ordinal, (_, row) in enumerate(rows.iterrows()):
         frac = (float(row["task_idx"]) - min_task) / denom
         step = int(np.clip(round(frac * (steps - 1)), 0, steps - 1))
-        if event_class == "high_boundary_impulse_J":
-            raw_strength = abs(float(row["J"]))
-        elif event_class == "residual_contraction_low_distance":
-            raw_strength = max(0.0, 1.0 / (1.0 + abs(float(row["distance"]))))
-        else:
-            raw_strength = 1.0
+        raw_strength = max(abs(float(row["strength"])), 1e-9)
         phase = float(row.get("phase", 0.0))
         target = int(np.mod(round((np.mod(phase, 2.0 * np.pi) / (2.0 * np.pi)) * n_nodes), n_nodes))
         schedules.append(
@@ -416,12 +561,8 @@ def run_audit(
     steps: int,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     rng = np.random.default_rng(seed)
-    events = add_event_classes(load_event_table(input_root))
-    event_classes = [
-        "high_boundary_impulse_J",
-        "residual_contraction_low_distance",
-        "FES_phase_transition",
-    ]
+    events = load_b3_event_rows(input_root)
+    event_classes = [event_class for event_class in EVENT_CLASSES if event_class in set(events["event_class"])]
     topology_names = [PRIMARY_TOPOLOGY, "C8(1)", "dodecahedron", "icosahedron"]
     results = []
     null_rows = []
@@ -526,10 +667,22 @@ def run_audit(
         result_df.loc[endogenous_mask, "primary_q_value"] = q_values
         result_df["interpretation"] = result_df.apply(interpret_row, axis=1)
     null_df = pd.DataFrame(null_rows)
+    inventory = (
+        events.groupby(["event_class", "source_file", "event_rule"], as_index=False)
+        .agg(
+            n_events=("event_class", "size"),
+            n_labels=("label", "nunique"),
+            min_task_idx=("task_idx", "min"),
+            max_task_idx=("task_idx", "max"),
+            mean_strength_raw=("strength", "mean"),
+        )
+        .sort_values(["event_class", "source_file"])
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
     result_df.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_results.csv", index=False)
     null_df.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_null_graphs.csv", index=False)
-    write_run_manifest(output_dir / "Stage_B3_endogenous_event_carrier_readout_run_manifest.md", input_root, n_runs, n_null, seed, steps)
+    inventory.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_event_inventory.csv", index=False)
+    write_run_manifest(output_dir / "Stage_B3_endogenous_event_carrier_readout_run_manifest.md", input_root, n_runs, n_null, seed, steps, inventory)
     write_summary(output_dir / "Stage_B3_endogenous_event_carrier_readout_summary.md", result_df, null_df)
     return result_df, null_df
 
@@ -554,6 +707,7 @@ def write_run_manifest(
     n_null: int,
     seed: int,
     steps: int,
+    inventory: pd.DataFrame,
 ) -> None:
     lines = [
         "# Stage B3 Endogenous-Event-Conditioned Carrier-Readout Audit Run Manifest",
@@ -564,6 +718,9 @@ def write_run_manifest(
         "",
         f"- input root: `{input_root}`",
         f"- primary event file: `{EVENT_FILE}`",
+        f"- h=0 source file: `{PHI_FILE}`",
+        f"- eps72 source file: `{EPS72_FILE}`",
+        f"- Ricci phase-sync source file: `{RICCI_PHASE_SYNC_FILE}`",
         f"- n_runs: {n_runs}",
         f"- n_null: {n_null}",
         f"- random seed: {seed}",
@@ -579,6 +736,17 @@ def write_run_manifest(
         "- high_boundary_impulse_J: top quartile of absolute J in the event-level IDPC table",
         "- residual_contraction_low_distance: bottom quartile of distance in the event-level IDPC table",
         "- FES_phase_transition: within-label change of FES phase",
+        "- h_zero_crossing: within-session sign crossing of the h=0 availability boundary",
+        "- eps72_restoration_onset: within-session restore 0->1 onset in the eps72 restoration table",
+        "- ricci_phase_sync_high_lock_session: top-quartile session-level psi_lock_R proxy for Ricci phase-sync increase events, because the available source is a session summary rather than an event-level increase series",
+        "",
+        "## Event Inventory",
+        "",
+        inventory.to_csv(index=False).strip(),
+        "",
+        "## Luke/C.A.T. Alignment",
+        "",
+        "This rerun keeps C12(1,2) fixed as the primary topology and changes only the IDPC event-conditioning classes. It keeps bounded differentiated recovery as the primary endpoint and does not introduce subthreshold-noise or V4-process variants into the frozen B3 run.",
         "",
         "## Leakage Guard",
         "",
