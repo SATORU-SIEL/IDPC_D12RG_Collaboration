@@ -302,6 +302,18 @@ def write_summary(path: Path, result: pd.DataFrame) -> None:
     endogenous = result[result["condition"].eq("endogenous")].copy()
     candidates = endogenous[endogenous["mu_diagnostic_interpretation"].eq("secondary_mu_sector_candidate_after_fdr")]
     directional = endogenous[endogenous["directional_endogenous_gt_both_controls"]].copy()
+    leading_cols = [
+        "topology_name",
+        "event_class",
+        "mu_sector",
+        "mu_differentiated_recovery",
+        "effect_vs_time_shifted",
+        "effect_vs_random_event",
+        "mu_p_value",
+        "mu_q_value",
+        "closed_walk_count",
+        "closed_walks_per_node",
+    ]
     lines = [
         "# Stage B3.1 Mu-Sector / Cycle-Spectrum Diagnostic Summary",
         "",
@@ -318,6 +330,8 @@ def write_summary(path: Path, result: pd.DataFrame) -> None:
         f"- endogenous mu-sector rows: {len(endogenous)}",
         f"- FDR-confirmed secondary mu-sector candidates: {len(candidates)}",
         f"- directional endogenous > both controls rows: {len(directional)}",
+        "- formal interpretation: no FDR-confirmed mu-sector recovery was detected",
+        "- exploratory interpretation: directional sector-level structure exists and is not uniformly distributed across event classes or topologies",
         "",
         "## Directional Rows By Topology",
         "",
@@ -348,25 +362,77 @@ def write_summary(path: Path, result: pd.DataFrame) -> None:
                 ]
             ].to_csv(index=False).strip(),
         ]
-    if len(directional):
+    else:
         lines += [
             "",
-            "## Directional But Not Necessarily Confirmed Rows",
+            "## FDR-Confirmed Mu-Sector Candidates",
             "",
-            directional[
-                [
-                    "topology_name",
-                    "event_class",
-                    "mu_sector",
-                    "mu_differentiated_recovery",
-                    "effect_vs_time_shifted",
-                    "effect_vs_random_event",
-                    "mu_p_value",
-                    "mu_q_value",
-                    "closed_walk_count",
-                    "mu_diagnostic_interpretation",
-                ]
-            ].sort_values(["topology_name", "event_class", "mu_sector"]).to_csv(index=False).strip(),
+            "None. B3.1 therefore remains a secondary, exploratory diagnostic rather than a confirmatory result.",
+        ]
+    if len(directional):
+        leading = directional.sort_values(
+            ["mu_q_value", "mu_p_value", "topology_name", "event_class", "mu_sector"]
+        ).head(30)
+        lines += [
+            "",
+            "## Leading Directional Rows",
+            "",
+            "These are the strongest directional rows by raw p-value / q-value. They are not confirmatory because none survives FDR correction.",
+            "",
+            leading[leading_cols].to_csv(index=False).strip(),
+        ]
+    c12 = directional[directional["topology_name"].eq(PRIMARY_TOPOLOGY)].copy()
+    if len(c12):
+        lines += [
+            "",
+            "## C12(1,2) Diagnostic Readout",
+            "",
+            "C12(1,2) had no confirmatory B3 primary positive and no FDR-confirmed B3.1 mu-sector candidate. However, it did show directional mu-sector rows in 26 / 72 endogenous sector tests.",
+            "",
+            "The most relevant C12 directional sectors are:",
+            "",
+            c12.sort_values(["mu_p_value", "mu_sector"])[leading_cols].head(12).to_csv(index=False).strip(),
+            "",
+            "Interpretation: C12(1,2) does not currently pass the formal gate, but the h=0 and eps72 directional B3 signals are not featureless. They project onto specific mu sectors, especially eps72-related mu24 / mu4 and h=0-related mu12 in this diagnostic.",
+        ]
+    dodeca = directional[directional["topology_name"].eq("dodecahedron")].copy()
+    if len(dodeca):
+        lines += [
+            "",
+            "## Dodecahedron Diagnostic Readout",
+            "",
+            "Dodecahedron had the strongest raw B3.1 directional rows. The leading rows were eps72_restoration_onset at mu4, mu9, and mu24, plus h_zero_crossing at mu20. These reached raw p=0.00621 but did not survive FDR correction.",
+            "",
+            dodeca.sort_values(["mu_p_value", "mu_sector"])[leading_cols].head(12).to_csv(index=False).strip(),
+            "",
+            "Interpretation: this is not confirmatory evidence for the dodecahedral route, but it is the clearest exploratory place where the Stage B3 directional effects acquire a sector-level shape.",
+        ]
+    c8 = directional[directional["topology_name"].eq("C8(1)")].copy()
+    if len(c8):
+        supported = c8[c8["closed_walk_count"] > 0]
+        lines += [
+            "",
+            "## C8(1) Diagnostic Readout",
+            "",
+            "C8(1) had directional rows in 22 / 72 endogenous sector tests, but many directional readout sectors have zero graph closed-walk support on C8(1). Those rows should be read as phase-grid readout effects rather than graph-supported cycle closures.",
+            "",
+            "Graph-supported C8 directional rows:",
+            "",
+            supported[leading_cols].sort_values(["mu_p_value", "mu_sector"]).to_csv(index=False).strip()
+            if len(supported)
+            else "None.",
+        ]
+    ico = directional[directional["topology_name"].eq("icosahedron")].copy()
+    if len(ico):
+        lines += [
+            "",
+            "## Icosahedron Diagnostic Readout",
+            "",
+            "Icosahedron had no directional rows in the B3 primary readout, but B3.1 found 28 / 72 directional mu-sector rows. This suggests that scalar D12/D24 recovery and sector-level closure diagnostics can diverge.",
+            "",
+            ico.sort_values(["mu_p_value", "mu_sector"])[leading_cols].head(12).to_csv(index=False).strip(),
+            "",
+            "Interpretation: this does not rescue icosahedron as a B3 primary candidate, but it shows why the Tom-style sector audit is useful: sector-level structure can exist even when the coarse B3 primary readout is not directionally positive.",
         ]
     lines += [
         "",
@@ -375,6 +441,10 @@ def write_summary(path: Path, result: pd.DataFrame) -> None:
         "In the completed B3 primary audit, formal preregistered positives were zero across C12(1,2), C8(1), dodecahedron, and icosahedron. However, exploratory directional effects were present in C12(1,2) for h_zero_crossing and eps72_restoration_onset, in C8(1) for the Ricci phase-sync proxy, and especially in dodecahedron across multiple event classes. Icosahedron showed no directional endogenous > both-controls rows in the B3 primary readout.",
         "",
         "B3.1 is intended to resolve whether those directional effects correspond to specific closure sectors such as mu4, mu6, mu12, or mu24, rather than generic phase concentration.",
+        "",
+        "## Reporting Boundary",
+        "",
+        "The complete row-level B3.1 output is in `reports/Stage_B3_1_mu_sector_cycle_spectrum_results.csv`. This summary intentionally separates confirmatory claims from directional diagnostics.",
     ]
     path.write_text("\n".join(lines) + "\n")
 
