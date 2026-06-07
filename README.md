@@ -31,6 +31,7 @@ The target is the IDPC-derived structural layer:
 - [Stage A+ structural holonomy loop summary](reports/Stage_A_plus_structural_holonomy_loop_summary.md)
 - [Stage B exploratory GKS / Kuramoto summary](reports/Stage_B_exploratory_gks_kuramoto_summary.md)
 - [Stage B Ricci phase-sync carrier summary](reports/Stage_B_ricci_phase_sync_carrier_summary.md)
+- [Stage B audit ledger](reports/Stage_B_audit_ledger.md)
 - [Stage B2 topology-aware carrier audit summary](reports/Stage_B2_topology_aware_carrier_audit_summary.md)
 
 Published result files:
