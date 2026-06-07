@@ -529,7 +529,7 @@ def run_audit(
     output_dir.mkdir(parents=True, exist_ok=True)
     result_df.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_results.csv", index=False)
     null_df.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_null_graphs.csv", index=False)
-    write_preregistration(output_dir / "Stage_B3_endogenous_event_carrier_readout_preregistration.md", input_root, n_runs, n_null, seed, steps)
+    write_run_manifest(output_dir / "Stage_B3_endogenous_event_carrier_readout_run_manifest.md", input_root, n_runs, n_null, seed, steps)
     write_summary(output_dir / "Stage_B3_endogenous_event_carrier_readout_summary.md", result_df, null_df)
     return result_df, null_df
 
@@ -547,7 +547,7 @@ def interpret_row(row: pd.Series) -> str:
     return "negative_or_inconclusive_for_primary_B3_event_conditioned_recovery"
 
 
-def write_preregistration(
+def write_run_manifest(
     path: Path,
     input_root: Path,
     n_runs: int,
@@ -556,9 +556,9 @@ def write_preregistration(
     steps: int,
 ) -> None:
     lines = [
-        "# Stage B3 Endogenous-Event-Conditioned Carrier-Readout Audit Preregistration",
+        "# Stage B3 Endogenous-Event-Conditioned Carrier-Readout Audit Run Manifest",
         "",
-        "Stage B3 is not Stage C. It tests transition/recovery behavior, not physical carrier confirmation.",
+        "This manifest records the execution parameters used for the run. It does not replace the frozen preregistration document.",
         "",
         "## Frozen Design",
         "",
