@@ -6,26 +6,19 @@ Stage B3 tests whether endogenous IDPC transition events condition bounded, non-
 
 ## Primary Result
 
-- primary endogenous C12 event-class rows: 3
+- primary endogenous C12 event-class rows: 6
 - positive primary rows under preregistered thresholds: 0
-- degree-matched null graph rows: 240
-- unseeded and artificial-seeded rows are reference conditions; event-window
-  recovery metrics are undefined for rows without an endogenous/control event
-  schedule and should not be interpreted as primary endpoint rows.
+- degree-matched null graph rows: 480
 
 ## Primary Endogenous C12 Rows
 
 event_class,differentiated_recovery,effect_vs_time_shifted,effect_vs_random_event,primary_p_value,primary_q_value,bounded_non_runaway_score,non_collapsed_differentiation_score,late_window_stability,interpretation
-high_boundary_impulse_J,-0.0030552768181647707,-0.0015720002381380876,-0.0007570304004812616,0.6583850931677019,0.7859966120835686,0.9367226492227694,0.486503116391744,0.41594340555150067,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
-residual_contraction_low_distance,-0.0018800388187340804,0.000502589762813578,-0.0018855521656873952,0.5652173913043478,0.7859966120835686,0.9740752164176321,0.7621516259436609,0.4259014390378894,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
-FES_phase_transition,-0.00021994260798788466,0.001960517837326896,0.00012140592206740547,0.30434782608695654,0.7859966120835686,0.9292570617028592,0.5882543907488877,0.7658546976442161,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
-
-## Secondary / Exploratory Boundary
-
-The C8(1), dodecahedron, and icosahedron rows are secondary contrast or
-exploratory complement rows. They are included to check whether the primary
-pattern is specific to C12(1,2), but they are not interpreted as confirmatory
-D12RG evidence in this run.
+high_boundary_impulse_J,-0.0030552768181647707,-0.0015720002381380876,-0.0007570304004812616,0.6583850931677019,0.8589174800354924,0.9367226492227694,0.486503116391744,0.41594340555150067,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
+residual_contraction_low_distance,-0.0018800388187340804,0.000502589762813578,-0.0018855521656873952,0.5652173913043478,0.8589174800354924,0.9740752164176321,0.7621516259436609,0.4259014390378894,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
+FES_phase_transition,-0.0006704460000790204,0.000959508852915488,-0.0003290974700237303,0.5031055900621118,0.8589174800354924,0.9290446038758873,0.5849132976640081,0.7683298134156351,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
+h_zero_crossing,0.008228096612528626,0.0012211808305812857,0.0008673135683182421,0.14906832298136646,0.8589174800354924,0.9620851876088942,0.7779334535690897,0.14813157960145446,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
+eps72_restoration_onset,0.0038555460010652547,0.0013584086948023395,0.008153469876865665,0.14906832298136646,0.8589174800354924,0.9535098131524571,0.8157764704103776,0.5585329790109969,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
+ricci_phase_sync_high_lock_session,-0.0016551461304960522,-0.0006133022319087193,-0.0015835800375191777,0.5527950310559007,0.8589174800354924,0.9702431752042088,0.48553016211482164,0.7744381455049896,negative_or_inconclusive_for_primary_B3_event_conditioned_recovery
 
 ## Interpretation Boundary
 

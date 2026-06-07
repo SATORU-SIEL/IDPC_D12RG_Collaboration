@@ -1,0 +1,7 @@
+event_class,source_file,event_rule,n_events,n_labels,min_task_idx,max_task_idx,mean_strength_raw
+FES_phase_transition,event_level_with_fes_phase_TRUE_RICCI.csv,within-label change of FES phase,192,26,2.0,27.0,1.0
+eps72_restoration_onset,Chapter3/ricci_eps72_restoring_test.csv,within-session restore 0->1 onset in eps72 restoration table,147,26,0.0,27.0,29.686857716802688
+h_zero_crossing,Chapter7/new_phi_dataset.csv,within-session sign crossing of h=0 availability boundary,1309,26,1.0,417.0,0.015761526129687082
+high_boundary_impulse_J,event_level_with_fes_phase_TRUE_RICCI.csv,top quartile of absolute J in the event-level IDPC table,57,24,1.0,27.0,0.2043949459783551
+residual_contraction_low_distance,event_level_with_fes_phase_TRUE_RICCI.csv,bottom quartile of distance in the event-level IDPC table,57,23,1.0,27.0,0.13130340826966425
+ricci_phase_sync_high_lock_session,Chapter3/ricci_phase_sync_summary.csv,top quartile session-level Ricci psi_lock_R proxy for phase-sync increase events,7,7,12.0,14.0,0.8280658072221362
