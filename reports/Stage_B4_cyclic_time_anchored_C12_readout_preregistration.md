@@ -1,50 +1,42 @@
-# Stage B4 Cyclic-Time Anchored C12 Readout Audit Preregistration
+# Stage B4 Preregistration: Real-Time Cyclic-Phase Anchored C12 Readout Audit
 
-## Purpose
+## Status
 
-Stage B4 is an exploratory representation-level audit. It preserves the
-original intuition:
+This preregistration supersedes the earlier session-normalized proxy version. Stage B4 must be run on real UTC timestamps.
 
-> C12 may not be a spatial graph that closes by itself. It may be a
-> 12-phase temporal readout basis that becomes meaningful only when anchored
-> to cyclic time.
+## Central Intuition
 
-In this framing, FES / eps72 / fivefold structure is treated as an energy or
-selection geometry, while C12 is treated as a cyclic temporal phase structure.
-The exploratory question is whether the intersection of fivefold event
-structure and twelvefold time phase appears as D24 / Phi24 / O3-like trace.
+C12 may not be an autonomous spatial topology. It may function as a cyclic temporal readout basis only when anchored to an orbital / annual time-phase axis.
 
-## Interpretation Boundary
+In this framing:
 
-Stage B4 does not rescue or reinterpret earlier stages.
+- C12 is the 12-phase temporal vessel.
+- D24 / Phi24 is the half-phase or lifted readout reference.
+- FES / eps72 remains the fivefold selection or energy-side structure.
+- The exploratory question is whether IDPC events become organized when read through the real cyclic-time axis.
 
-- B2 remains negative for unanchored autonomous C12(1,2) self-locking.
-- B3 remains negative / inconclusive for endogenous-event-conditioned
-  differentiated recovery on fixed C12(1,2).
-- B3.1 remains a secondary mu-sector diagnostic with no FDR-confirmed positive.
-- B3.2 remains a dynamic mu-sector diagnostic with no FDR-confirmed positive.
+## Primary Anchor
 
-## Main Hypothesis
+The primary anchor is `utc_annual_orbital_phase`, computed directly from each event's real UTC timestamp as year-fraction phase.
 
-C12(1,2) does not function as an autonomous spatial topology. It may function
-as a cyclic-time anchored temporal readout basis for IDPC event / phase
-processes.
+This is the formal Stage B4 target.
 
-## Main Anchor
+## Secondary Anchor
 
-The primary B4 anchor is fixed before execution:
+The secondary anchor is `utc_daily_phase`, computed directly from each event's real UTC timestamp as day-fraction phase.
 
-- `session_normalized_event_position`
+This is a monitor only. It must not replace the primary annual / orbital interpretation.
 
-Each IDPC event is mapped to a cyclic phase by its predefined position within
-its source session. Because the available B4 input bundle does not provide
-absolute calendar timestamps, this first B4 run does not test literal annual
-or orbital time. It tests the abstract cyclic-time anchoring version of the
-intuition.
+## Event UTC Mapping Rules
 
-## Main Bases
+- `event_level_with_fes_phase_TRUE_RICCI.csv`: join `label` and `task_idx` to `P*_quantum_timeseries.csv` `mid_utc`.
+- `Chapter7/new_phi_dataset.csv` h=0 crossings: map `idx_in_session` to the nearest `P*_eeg_timeseries.csv` bin midpoint using per-label source length.
+- `Chapter3/ricci_eps72_restoring_test.csv` eps72 restoration onsets: map per-label row index to the nearest `P*_quantum_timeseries.csv` `mid_utc` using per-label source length.
+- `Chapter3/ricci_phase_sync_summary.csv`: map session-level rows to the midpoint quantum task UTC for that label.
 
-The same event phase map is evaluated under:
+## Bases
+
+Compare temporal readout bases:
 
 - C8
 - C10
@@ -52,63 +44,45 @@ The same event phase map is evaluated under:
 - C16
 - C24
 
-C12 is the main basis of interest, but it is not tested alone.
+C12 is the main basis. C24 is the D24 / Phi24 lift reference.
 
 ## Controls
 
-For each event class and basis, B4 compares:
+For each event class and basis, compare observed real-time phase organization against:
 
-- observed cyclic anchor
-- phase rotation controls
-- phase scrambling controls
-- time-shifted anchor controls
+- random phase-scramble controls
+- event-pool time resampling controls
+- label-preserved time resampling controls
 
-Controls preserve event count and event-class membership while destroying or
-rotating the phase anchor.
+Phase-rotation and within-basis phase-shift diagnostics may be reported, but they are not decisive controls because the concentration score is largely rotation-invariant.
 
-## Main Metrics
+## Exploratory Candidate Pattern
 
-- temporal phase concentration
-- event-class-specific phase alignment
-- basis specificity score
-- C12 vs C8/C10/C16/C24 contrast
-- D24 / Phi24 lifted readout score
-- control contrast against rotation / scramble / time-shift
+A Stage B4 exploratory C12 candidate requires:
 
-## Main Success Pattern
+- primary anchor is `utc_annual_orbital_phase`
+- basis is C12
+- C12 outperforms the best tested alternative basis for the same event class
+- C12 has positive contrast against random phase, event-pool, and label-preserved time controls
+- D24 / Phi24 lift remains directionally present
 
-Because B4 is exploratory, the first run is not over-constrained as a hard
-confirmatory test. The expected positive pattern is:
+This is exploratory, not a Stage C gate.
 
-- C12 does not work as an autonomous spatial graph in earlier stages.
-- With cyclic-time anchoring, IDPC events show stronger C12 organization than
-  alternative bases.
-- D24 / Phi24 lifted readout appears in the same direction.
-- The effect weakens under phase rotation, scrambling, or time-shift controls.
-- The effect is event-class-specific rather than generic phase concentration.
+## Negative Boundary
 
-## Secondary Layers
+If no candidate appears, the result means:
 
-The following are secondary and should not obscure the main intuition:
+> No C12 temporal readout candidate was confirmed under the current real-UTC annual/orbital mapping and event set.
 
-- mu-sector follow-up from B3.1 / B3.2
-- RG Units / phase-unit interpretation
-- coupled spatiotemporal or field-orientation anchors
+It does not by itself reject the broader intuition that C12 may be a cyclic temporal readout basis.
 
-They may guide interpretation, but the first B4 run is centered on cyclic-time
-anchored C12 readout.
+## Frozen Command
 
-## Anti-Circularity Guardrails
-
-- Do not choose the anchor after seeing which basis scores best.
-- Do not change the phase map after inspecting results.
-- Compare C12 against C8/C10/C16/C24 with the same procedure.
-- Include controls.
-- Record input hashes.
-- Report negative / inconclusive outcomes directly.
-
-## Frozen Defaults
-
-- n_rotations = 24
-- n_random = 200
-- random seed = 20260608
+```bash
+python3 scripts/test_Stage_B4_cyclic_time_anchored_C12_readout.py \
+  --input-root /Users/satoru/Documents/Codex/2026-04-20-github-github-plugin-github-openai-curated/IDPC_Reproduction/IDPC_Reproduction \
+  --output-dir reports \
+  --n-rotations 24 \
+  --n-random 200 \
+  --seed 20260608
+```
