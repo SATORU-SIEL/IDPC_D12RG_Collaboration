@@ -1,0 +1,18 @@
+# Stage B4 Cyclic-Time Anchored C12 Readout Audit Manifest
+
+Stage B4 is exploratory. It tests C12 as a cyclic-time anchored readout basis, not as an autonomous spatial graph.
+
+- input root: `/Users/satoru/Documents/Codex/2026-04-20-github-github-plugin-github-openai-curated/IDPC_Reproduction/IDPC_Reproduction`
+- primary anchor: `session_normalized_event_position`
+- bases: C8, C10, C12, C16, C24
+- n_rotations: 24
+- n_random: 200
+- random seed: 20260608
+
+## Input Hashes
+
+relative_path,absolute_path,bytes,sha256
+event_level_with_fes_phase_TRUE_RICCI.csv,/Users/satoru/Documents/Codex/2026-04-20-github-github-plugin-github-openai-curated/IDPC_Reproduction/IDPC_Reproduction/event_level_with_fes_phase_TRUE_RICCI.csv,103144,1096c6797ef8588cf116526f93c45b4225931954f79d44c13e6931bbf6234c13
+Chapter7/new_phi_dataset.csv,/Users/satoru/Documents/Codex/2026-04-20-github-github-plugin-github-openai-curated/IDPC_Reproduction/IDPC_Reproduction/Chapter7/new_phi_dataset.csv,2988942,516d766f4b75f37cebae8b3fc2a2d47400f68ac0817feab8576236dc42542500
+Chapter3/ricci_eps72_restoring_test.csv,/Users/satoru/Documents/Codex/2026-04-20-github-github-plugin-github-openai-curated/IDPC_Reproduction/IDPC_Reproduction/Chapter3/ricci_eps72_restoring_test.csv,28428,2218aeb2420c286ca155c031c36702002c2bc2abc86b248876f65093c6882029
+Chapter3/ricci_phase_sync_summary.csv,/Users/satoru/Documents/Codex/2026-04-20-github-github-plugin-github-openai-curated/IDPC_Reproduction/IDPC_Reproduction/Chapter3/ricci_phase_sync_summary.csv,2756,27b356673793fd51dc359ae6e96265d0c8786d00727cab5a481dac4f08f19e0a
