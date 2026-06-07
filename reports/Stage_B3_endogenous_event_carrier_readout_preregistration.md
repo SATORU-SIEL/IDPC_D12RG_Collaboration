@@ -131,6 +131,18 @@ budget of the endogenous event schedule. Event strength is scaled within a
 fixed range before execution and then reused by the time-shifted and
 random-event controls.
 
+## Input Hash Guard
+
+The formal B3 rerun must write SHA256 hashes for all frozen input CSV files:
+
+- `event_level_with_fes_phase_TRUE_RICCI.csv`
+- `Chapter7/new_phi_dataset.csv`
+- `Chapter3/ricci_eps72_restoring_test.csv`
+- `Chapter3/ricci_phase_sync_summary.csv`
+
+The run manifest and public result bundle must include these hashes so the
+reported event schedule can be traced to the exact input files used.
+
 ## Leakage Guard
 
 Variables used to define event classes are not used directly as the primary

@@ -10,6 +10,7 @@ than matched time-shifted and random-event controls.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import math
 from collections import defaultdict
 from pathlib import Path
@@ -33,6 +34,7 @@ EVENT_CLASSES = [
     "eps72_restoration_onset",
     "ricci_phase_sync_high_lock_session",
 ]
+INPUT_FILES = [EVENT_FILE, PHI_FILE, EPS72_FILE, RICCI_PHASE_SYNC_FILE]
 
 
 def unique_edges(n_nodes: int, jumps: tuple[int, ...]) -> list[tuple[int, int]]:
@@ -205,6 +207,31 @@ def load_event_table(input_root: Path) -> pd.DataFrame:
     df = df.sort_values(["label", "task_idx"]).reset_index(drop=True)
     df["label"] = df["label"].map(canonical_label)
     return df
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def input_hash_manifest(input_root: Path) -> pd.DataFrame:
+    rows = []
+    for rel_path in INPUT_FILES:
+        path = input_root / rel_path
+        if not path.exists():
+            raise FileNotFoundError(f"missing B3 input file for hashing: {path}")
+        rows.append(
+            {
+                "relative_path": rel_path,
+                "absolute_path": str(path),
+                "bytes": path.stat().st_size,
+                "sha256": sha256_file(path),
+            }
+        )
+    return pd.DataFrame(rows)
 
 
 def append_event(
@@ -561,6 +588,7 @@ def run_audit(
     steps: int,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     rng = np.random.default_rng(seed)
+    input_hashes = input_hash_manifest(input_root)
     events = load_b3_event_rows(input_root)
     event_classes = [event_class for event_class in EVENT_CLASSES if event_class in set(events["event_class"])]
     topology_names = [PRIMARY_TOPOLOGY, "C8(1)", "dodecahedron", "icosahedron"]
@@ -682,7 +710,8 @@ def run_audit(
     result_df.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_results.csv", index=False)
     null_df.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_null_graphs.csv", index=False)
     inventory.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_event_inventory.csv", index=False)
-    write_run_manifest(output_dir / "Stage_B3_endogenous_event_carrier_readout_run_manifest.md", input_root, n_runs, n_null, seed, steps, inventory)
+    input_hashes.to_csv(output_dir / "Stage_B3_endogenous_event_carrier_readout_input_hashes.csv", index=False)
+    write_run_manifest(output_dir / "Stage_B3_endogenous_event_carrier_readout_run_manifest.md", input_root, n_runs, n_null, seed, steps, inventory, input_hashes)
     write_summary(output_dir / "Stage_B3_endogenous_event_carrier_readout_summary.md", result_df, null_df)
     return result_df, null_df
 
@@ -708,6 +737,7 @@ def write_run_manifest(
     seed: int,
     steps: int,
     inventory: pd.DataFrame,
+    input_hashes: pd.DataFrame,
 ) -> None:
     lines = [
         "# Stage B3 Endogenous-Event-Conditioned Carrier-Readout Audit Run Manifest",
@@ -743,6 +773,10 @@ def write_run_manifest(
         "## Event Inventory",
         "",
         inventory.to_csv(index=False).strip(),
+        "",
+        "## Input Hashes",
+        "",
+        input_hashes.to_csv(index=False).strip(),
         "",
         "## Luke/C.A.T. Alignment",
         "",
