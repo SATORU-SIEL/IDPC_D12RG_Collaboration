@@ -1,0 +1,9 @@
+event_class,event_role,source_file,event_rule,n_events,n_labels,min_task_idx,max_task_idx,mean_strength
+chapter7_d2phi_curvature_switch,contrast_switch,Chapter7/new_phi_dataset.csv,sign switch of Chapter7 d2phi curvature,6731,26,3.0,417.0,0.5707575318168661
+chapter7_deps_sign_switch,contrast_switch,Chapter7/new_phi_dataset.csv,sign switch of Chapter7 deps,4650,26,2.0,417.0,0.007698070655891552
+chapter7_dphi_sign_switch,contrast_switch,Chapter7/new_phi_dataset.csv,sign switch of Chapter7 dphi,4741,26,2.0,417.0,0.40650323045115333
+hybrid_cluster_transition,primary_phi_fes,event_level_with_fes_phase_TRUE_RICCI.csv,transition of formal FES/hybrid-Phi cluster assignment,192,26,2.0,27.0,1.0
+hybrid_fes_phase_transition,primary_phi_fes,event_level_with_fes_phase_TRUE_RICCI.csv,transition of formal FES semantic phase assignment,192,26,2.0,27.0,1.0
+hybrid_phi_sign_switch,primary_phi_fes,event_level_with_fes_phase_TRUE_RICCI.csv,sign switch of formal hybrid Phi in the FES event-level table,120,26,2.0,27.0,0.8808924362318745
+chapter7_h_zero_crossing,secondary_phi_reference,Chapter7/new_phi_dataset.csv,Chapter7 h=0 availability-boundary crossing,1309,26,1.0,417.0,0.015761526129687082
+chapter7_phi_clean_sign_switch,secondary_phi_reference,Chapter7/new_phi_dataset.csv,sign switch of Chapter7 phi_clean,1578,26,1.0,417.0,0.6554987532125558
