@@ -1,0 +1,6 @@
+effect_family,n_primary_events,n_positive_direction,all_positive,secondary_sign_test_p_all_positive,interpretation
+effect_vs_time_shifted,3,3,True,0.125,secondary directional concordance only; not confirmatory
+effect_vs_random_event,3,3,True,0.125,secondary directional concordance only; not confirmatory
+effect_vs_C8,3,3,True,0.125,secondary directional concordance only; not confirmatory
+effect_vs_degree_null_mean,3,3,True,0.125,secondary directional concordance only; not confirmatory
+all_four_effect_families,12,12,True,0.000244140625,descriptive only because signs are not independent
