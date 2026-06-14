@@ -1,0 +1,8 @@
+event_class,event_role,source_file,event_rule,n_events,n_labels,min_task_idx,max_task_idx,mean_strength
+eta075_dphi_all_control,contrast_switch,closed-loop phi reconstruction from Chapter7/new_phi_dataset.csv,closed-loop dphi warning/control event,1144,26,2.0,417.0,0.0388157983754924
+eta075_dphi_interval_control,contrast_switch,closed-loop phi reconstruction from Chapter7/new_phi_dataset.csv,closed-loop dphi warning/control event,1144,26,2.0,417.0,0.0388157983754924
+eta075_dphi_interval_count_match_00,contrast_switch,closed-loop phi reconstruction from Chapter7/new_phi_dataset.csv,count-matched dphi negative control,502,26,2.0,416.0,0.0423147023262146
+eta075_dphi_interval_count_match_01,contrast_switch,closed-loop phi reconstruction from Chapter7/new_phi_dataset.csv,count-matched dphi negative control,502,26,2.0,416.0,0.037294544828763
+eta075_dphi_interval_count_match_02,contrast_switch,closed-loop phi reconstruction from Chapter7/new_phi_dataset.csv,count-matched dphi negative control,502,26,2.0,415.0,0.0382570271935709
+eta075_dphi_interval_count_match_03,contrast_switch,closed-loop phi reconstruction from Chapter7/new_phi_dataset.csv,count-matched dphi negative control,502,26,2.0,415.0,0.0391973377272248
+eta075_phi_sign_primary,primary_phi_fes,closed-loop phi reconstruction from Chapter7/new_phi_dataset.csv,closed-loop phi sign-switch primary endpoint,502,26,1.0,417.0,0.2259009710696841
