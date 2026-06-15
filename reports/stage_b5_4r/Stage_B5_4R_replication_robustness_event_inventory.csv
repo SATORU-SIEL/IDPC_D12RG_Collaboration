@@ -1,0 +1,17 @@
+event_class,event_role,n_events,n_labels,min_task_idx,max_task_idx,mean_strength
+b54r_a_feedback,adversarial_control,837,26,1.0,416.0,0.2740979514044999
+b54r_countmatched_dphi_1,countmatched_control,502,26,2.0,417.0,0.422047578623216
+b54r_countmatched_dphi_2,countmatched_control,502,26,2.0,415.0,0.4204083568190188
+b54r_countmatched_dphi_3,countmatched_control,502,26,2.0,416.0,0.423628045622217
+b54r_d2phi_feedback,adversarial_control,2387,26,1.0,417.0,0.4493960062120715
+b54r_deps_feedback,adversarial_control,1120,26,2.0,417.0,0.4530498842021079
+b54r_dh_feedback,adversarial_control,1120,26,2.0,417.0,0.4530498842021163
+b54r_dphi_feedback,adversarial_control,2137,26,1.0,417.0,0.4167624961812571
+b54r_eta_zero,adversarial_control,763,26,1.0,416.0,0.2866533816874506
+b54r_event_block_shuffled_phi_memory,adversarial_control,574,26,1.0,417.0,0.2538575062795637
+b54r_lag_shifted_phi_memory,adversarial_control,480,26,5.0,415.0,0.2261413351662465
+b54r_minus_phi_memory,adversarial_control,581,26,1.0,417.0,0.2377541426625087
+b54r_plus_phi_memory,primary_phi_fes,502,26,1.0,417.0,0.2259009710696841
+b54r_random_ar_feedback,adversarial_control,1348,26,2.0,417.0,0.3272638332450021
+b54r_session_shuffled_phi_memory,adversarial_control,2719,26,1.0,417.0,0.3938329322068347
+b54r_shuffled_phi_memory,adversarial_control,2755,26,1.0,417.0,0.3937955978929467
