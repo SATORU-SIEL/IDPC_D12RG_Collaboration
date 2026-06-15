@@ -1,0 +1,14 @@
+event_class,event_role,n_events,n_labels,min_task_idx,max_task_idx,mean_strength
+b54s_block_density_matched_d2phi,differential_event_control,502,26,1.0,417.0,0.4481235029350382
+b54s_block_density_matched_dphi,differential_event_control,502,26,2.0,417.0,0.40629347844028535
+b54s_block_density_matched_dphi_rep1,differential_event_control,502,26,3.0,417.0,0.403427741679618
+b54s_block_density_matched_dphi_rep2,differential_event_control,502,26,2.0,417.0,0.398022273233373
+b54s_block_density_matched_dphi_rep3,differential_event_control,502,26,2.0,417.0,0.39911352632073643
+b54s_block_matched_event_block_shuffled_phi,event_block_control,502,26,1.0,414.0,0.24645367846069877
+b54s_block_matched_lag_shifted_phi,timing_control,502,26,5.0,415.0,0.23370959946800463
+b54s_block_matched_shuffled_phi_memory,block_matched_phi_control,502,26,2.0,414.0,0.3954616137899922
+b54s_block_permuted_schedule,event_block_control,502,26,0.0,417.0,0.2259009710696841
+b54s_phase_preserving_timing_shuffle,timing_control,502,26,1.0,417.0,0.2259009710696841
+b54s_plus_phi_memory,primary_phi_memory,502,26,1.0,417.0,0.2259009710696841
+b54s_same_schedule_phase_strength_shuffle,same_schedule_control,502,26,1.0,417.0,0.2259009710696841
+b54s_same_schedule_random_phase_strength,same_schedule_control,502,26,1.0,417.0,0.22185895555434557
