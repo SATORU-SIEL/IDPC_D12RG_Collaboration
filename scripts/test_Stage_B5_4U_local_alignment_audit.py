@@ -97,7 +97,8 @@ def annotate_boundary_distance(plus: pd.DataFrame, series: pd.DataFrame) -> pd.D
 def boundary_strata(plus: pd.DataFrame, series: pd.DataFrame, rng: np.random.Generator) -> list[pd.DataFrame]:
     annotated = annotate_boundary_distance(plus, series)
     ranked = annotated.sort_values("boundary_distance", na_position="last").copy()
-    chunks = np.array_split(ranked, 3)
+    split_indices = np.array_split(np.arange(len(ranked)), 3)
+    chunks = [ranked.iloc[idx].copy() for idx in split_indices]
     n = min(len(c) for c in chunks if len(c) > 0)
     names = [
         ("b54u_boundary_near_matched", "near-boundary tercile; count matched"),
