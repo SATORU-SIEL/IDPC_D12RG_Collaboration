@@ -1,0 +1,10 @@
+event_class,event_role,n_events,n_labels,min_task_idx,max_task_idx,mean_strength
+b55_density_only_gate,density_control,1206,26,0.0,412.0,0.21257328382970925
+b55_pairwise_ab_only,pairwise_control,109,26,6.0,392.0,0.23971623896545793
+b55_pairwise_ac_only,pairwise_control,89,25,13.0,398.0,0.22376553749838254
+b55_pairwise_bc_only,pairwise_control,135,26,15.0,402.0,0.23298531821839855
+b55_phase_event_only_lag5,c_event_control,502,26,6.0,417.0,0.2259009710696841
+b55_shuffled_c_phase_gate,shuffle_control,176,26,6.0,411.0,0.22263575439841912
+b55_shuffled_c_timing_gate,shuffle_control,1188,26,0.0,412.0,0.21964428111556286
+b55_tfc_mean_gated_c_event,primary_constraint,234,26,6.0,411.0,0.2264078509348924
+b55_tfc_min_gated_c_event,secondary_closure,165,26,6.0,411.0,0.22141404029265316
