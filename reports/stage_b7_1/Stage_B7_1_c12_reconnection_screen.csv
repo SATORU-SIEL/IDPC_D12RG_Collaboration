@@ -1,0 +1,23 @@
+module,condition,role,metric,value,q_value,interpretation
+b55_c12_single_ring,b55_pairwise_ac_only,pairwise_control,mean_bounded_differentiated_recovery,0.0380149671595839,0.1680497925311203,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_tfc_min_gated_c_event,secondary_closure,mean_bounded_differentiated_recovery,0.0356410600811313,0.441908713692946,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_shuffled_c_phase_gate,shuffle_control,mean_bounded_differentiated_recovery,0.0280324683498542,0.233402489626556,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_phase_event_only_lag5,c_event_control,mean_bounded_differentiated_recovery,0.0264343140750126,0.1680497925311203,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_pairwise_ab_only,pairwise_control,mean_bounded_differentiated_recovery,0.0182710269452569,0.3809128630705394,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_pairwise_bc_only,pairwise_control,mean_bounded_differentiated_recovery,0.0166595860675906,0.4714730290456431,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_tfc_mean_gated_c_event,primary_constraint,mean_bounded_differentiated_recovery,0.0161232330113207,0.4714730290456431,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_shuffled_c_timing_gate,shuffle_control,mean_bounded_differentiated_recovery,0.0031298440950295,0.233402489626556,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_c12_single_ring,b55_density_only_gate,density_control,mean_bounded_differentiated_recovery,-0.002123330408663,0.975103734439834,C12 ranking differs from future_AB ranking; topology readout is not identical to future AB optimizer.
+b55_future_ab_delta5,b55_pairwise_ab_only,future_ab,mean_future_AB,0.2528878444481199,0.0011997600479904,Future AB comparator for C12 reconnection boundary.
+b55_future_ab_delta5,b55_tfc_mean_gated_c_event,future_ab,mean_future_AB,0.2295628311023768,0.0011997600479904,Future AB comparator for C12 reconnection boundary.
+b55_future_ab_delta5,b55_tfc_min_gated_c_event,future_ab,mean_future_AB,0.2192093014764181,0.0403919216156768,Future AB comparator for C12 reconnection boundary.
+b55_future_ab_delta5,b55_phase_event_only_lag5,future_ab,mean_future_AB,0.1979941816299631,0.598380323935213,Future AB comparator for C12 reconnection boundary.
+b55_future_ab_delta5,b55_pairwise_bc_only,future_ab,mean_future_AB,0.1806152452371477,0.9854029194161168,Future AB comparator for C12 reconnection boundary.
+b55_future_ab_delta5,b55_pairwise_ac_only,future_ab,mean_future_AB,0.1640410982123807,0.9854029194161168,Future AB comparator for C12 reconnection boundary.
+b56_projection_c12,b56_C_boundary_A_projection,boundary_projection,mean_bounded_differentiated_recovery,0.0405503514611333,0.0869565217391304,Projection screen for secondary C12 topology-readout module.
+b56_projection_c12,b56_C_boundary_B_swapped_control,ab_symmetry_control,mean_bounded_differentiated_recovery,0.0398811075087122,0.0869565217391304,Projection screen for secondary C12 topology-readout module.
+b56_projection_c12,b56_C_phase_projection,phase_projection,mean_bounded_differentiated_recovery,0.0267085069945686,0.0869565217391304,Projection screen for secondary C12 topology-readout module.
+b56_projection_c12,b56_C_full_projection,primary_projection,mean_bounded_differentiated_recovery,0.0246518413978093,0.2971014492753623,Projection screen for secondary C12 topology-readout module.
+b56_projection_c12,b56_C_boundary_B_projection,boundary_projection,mean_bounded_differentiated_recovery,0.0217436919290297,0.2521739130434782,Projection screen for secondary C12 topology-readout module.
+b56_projection_c12,b56_C_boundary_A_swapped_control,ab_symmetry_control,mean_bounded_differentiated_recovery,0.0215829477005767,0.2521739130434782,Projection screen for secondary C12 topology-readout module.
+b56_projection_c12,b56_C_memory_projection,memory_projection,mean_bounded_differentiated_recovery,0.0153033057586198,0.4099378881987577,Projection screen for secondary C12 topology-readout module.
