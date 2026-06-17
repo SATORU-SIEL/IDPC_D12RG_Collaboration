@@ -1,0 +1,13 @@
+mode,endpoint,dominant_fold_direction,fold_direction_stability,n_folds,fold_mean_asymmetry_min,fold_mean_asymmetry_max
+combined_c_fes_gmr72,z_reward,decohered_to_relative,0.6,5,-0.047664002112580386,0.034383562434982196
+combined_c_fes_gmr72,rank_reward,decohered_to_relative,0.6,5,-0.04972075420436837,0.0566806675274053
+combined_c_fes_gmr72,gmr72_bridge_composite,decohered_to_relative,0.6,5,-0.01702118197196857,0.007365518347753615
+gmr72_phase_conditioned,z_reward,decohered_to_relative,0.6,5,-0.051148286155674384,0.06531878844682593
+gmr72_phase_conditioned,rank_reward,decohered_to_relative,0.6,5,-0.05127974748152233,0.09040061441193742
+gmr72_phase_conditioned,gmr72_bridge_composite,decohered_to_relative,0.6,5,-0.01565012659329592,0.009898166366365186
+fes_string_conditioned,z_reward,decohered_to_relative,0.6,5,-0.03120217863572347,0.015915991926251063
+fes_string_conditioned,rank_reward,decohered_to_relative,0.6,5,-0.03074571456786702,0.042839344523956005
+fes_string_conditioned,gmr72_bridge_composite,decohered_to_relative,0.6,5,-0.013699601622293991,0.008392377054500695
+linear_c_state,z_reward,decohered_to_relative,0.6,5,-0.045833044680334306,0.07900071694426962
+linear_c_state,rank_reward,decohered_to_relative,0.6,5,-0.048274970150341774,0.10165954298993593
+linear_c_state,gmr72_bridge_composite,relative_to_decohered,0.6,5,-0.014700248217383178,0.01524433550057948

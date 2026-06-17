@@ -1,0 +1,3 @@
+direction,conditions,robust_successes,strong_successes,mean_core_pass,mean_object_pass
+A_to_C_to_B,48,4,4,1.6666666666666667,2.5833333333333335
+B_to_C_to_A,48,8,8,1.5,2.5833333333333335

@@ -1,0 +1,4 @@
+selected_operator,n_state_fold_mappings,mean_selected_train_reward,mean_global_best_train_reward
+O1_lag0_AB,25,0.20221780288465566,0.06625214049124391
+O2_lag5_AB,31,0.2140516670475633,0.11800303369924879
+O7_suppress_event,72,0.0,-0.06264098059786286

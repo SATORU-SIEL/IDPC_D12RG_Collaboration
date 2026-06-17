@@ -1,0 +1,15 @@
+mapping_type,selected_operator,n_state_fold_mappings,mean_train_reward_z,mean_train_effect_vs_global_best
+shuffled_state_labels,O1_lag0_AB,14,0.43605290653948053,0.24898774371595364
+shuffled_state_labels,O2_lag5_AB,18,0.43980234792849066,0.4477020785562713
+shuffled_state_labels,O3_A_C_boundary,25,0.5244514330315312,0.3685876063339952
+shuffled_state_labels,O4_B_C_boundary,24,0.42300467664370617,0.3422620125158336
+shuffled_state_labels,O5_full_TFC,20,0.408249870598527,0.37633250090274173
+shuffled_state_labels,O6_phase_only,17,0.4543234956891705,0.5066098903325958
+shuffled_state_labels,O7_suppress_event,5,0.0,0.20109539797334489
+state_conditioned,O1_lag0_AB,26,0.6430036268127897,0.5204944775156792
+state_conditioned,O2_lag5_AB,16,0.3718593421914674,0.482698195534852
+state_conditioned,O3_A_C_boundary,26,0.6733662587447531,0.3133651746599534
+state_conditioned,O4_B_C_boundary,23,0.3537143211350108,0.4093052187295477
+state_conditioned,O5_full_TFC,4,0.6390738089962564,0.7095966771130422
+state_conditioned,O6_phase_only,25,0.4905651895855372,0.5834954384289559
+state_conditioned,O7_suppress_event,3,0.0,0.1748932588745911

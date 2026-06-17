@@ -1,0 +1,12 @@
+cv_selected_operator,cv_selection_source,n_events,mean_reward_z,oracle_hit_rate
+O1_lag0_AB,global_fallback,34,-0.20214426005277344,0.058823529411764705
+O1_lag0_AB,state_mapping,57,0.3054799272760649,0.19298245614035087
+O2_lag5_AB,state_mapping,32,-0.16770604095138428,0.09375
+O3_A_C_boundary,global_fallback,88,-0.15732047738015106,0.09090909090909091
+O3_A_C_boundary,state_mapping,49,0.3765814217542308,0.22448979591836735
+O4_B_C_boundary,global_fallback,52,-0.3285847732983411,0.11538461538461539
+O4_B_C_boundary,state_mapping,56,-0.0779440497903503,0.17857142857142858
+O5_full_TFC,state_mapping,13,0.3794320575858261,0.15384615384615385
+O6_phase_only,state_mapping,64,0.11671701087641789,0.234375
+O7_suppress_event,global_fallback,54,0.0,0.1111111111111111
+O7_suppress_event,state_mapping,3,0.0,0.0

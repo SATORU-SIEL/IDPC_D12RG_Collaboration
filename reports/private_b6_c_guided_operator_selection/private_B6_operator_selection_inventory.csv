@@ -1,0 +1,7 @@
+selected_operator,selection_reason,n_events,mean_selected_reward_z,oracle_match_rate
+O1_lag0_AB,default immediate AB readout,78,-0.7199566147684511,0.02564102564102564
+O2_lag5_AB,current AB is active; read short-lag future AB,49,0.43081863117276803,0.1836734693877551
+O3_A_C_boundary,A-side boundary projection dominates current C-state,91,0.5102310522822723,0.3076923076923077
+O4_B_C_boundary,B-side boundary projection dominates current C-state,158,0.030746369396011546,0.21518987341772153
+O5_full_TFC,full triadic projection is already active,100,0.40946439025539183,0.24
+O6_phase_only,phase or closed-loop memory is high,26,0.030814817452294564,0.15384615384615385

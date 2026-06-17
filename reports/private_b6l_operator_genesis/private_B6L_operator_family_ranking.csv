@@ -1,0 +1,13 @@
+mode,endpoint,n_generated_families,mean_generated_train_reward,mean_selected_train_reward
+combined_c_fes_gmr72,gmr72_bridge_composite,102,0.04208198234302613,0.20359246236500936
+combined_c_fes_gmr72,rank_reward,102,0.180722269314316,0.4136077031878792
+combined_c_fes_gmr72,z_reward,102,0.17882627946140525,0.4334861153555395
+fes_string_conditioned,gmr72_bridge_composite,25,0.0189388146422828,0.08785461885101428
+fes_string_conditioned,rank_reward,25,0.06413488640970533,0.19050798169076916
+fes_string_conditioned,z_reward,25,0.05743284276559112,0.1878505158843498
+gmr72_phase_conditioned,gmr72_bridge_composite,60,0.023337012390824245,0.12981864782881594
+gmr72_phase_conditioned,rank_reward,60,0.13895427246619463,0.3286606917397032
+gmr72_phase_conditioned,z_reward,60,0.12879050109706994,0.3219633078338581
+linear_c_state,gmr72_bridge_composite,60,0.024659696239318317,0.12981864782881594
+linear_c_state,rank_reward,60,0.1403339870078815,0.3286606917397032
+linear_c_state,z_reward,60,0.1315034847111088,0.3219633078338581

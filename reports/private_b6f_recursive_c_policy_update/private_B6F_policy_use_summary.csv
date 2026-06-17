@@ -1,0 +1,6 @@
+true_policy_operator,true_policy_source,n_events,mean_recursive_composite,mean_future_C_quality,oracle_hit_rate
+O1_lag0_AB,state_mapping,55,-0.0510959497648959,0.1312073662262204,0.18181818181818182
+O2_lag5_AB,global_fallback,82,-0.08493531543315774,-0.05171398928411355,0.14634146341463414
+O2_lag5_AB,state_mapping,79,0.02816091758051994,-0.06501185337975217,0.12658227848101267
+O7_suppress_event,global_fallback,131,0.0,0.0,0.5801526717557252
+O7_suppress_event,state_mapping,155,0.0,0.0,0.5290322580645161

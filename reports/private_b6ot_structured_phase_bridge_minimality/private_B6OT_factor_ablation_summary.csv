@@ -1,0 +1,11 @@
+bridge_variant,ablation,removed_condition,mean_true_intersection,delta_from_true72,p_true72_greater,robust_accesses,strong_accesses,phase_structure,cyclic_order,fixed_angular_step,fes_five_string_order,forward_orientation
+no_bridge,remove_bridge,"phase_structure,cyclic_order,fixed_angular_step,fes_five_string_order,forward_orientation",-0.6636221643031903,0.39924708682919996,0.004399120175964807,8,8,False,False,False,False,False
+random_phase,remove_structured_phase,"phase_structure,cyclic_order,fixed_angular_step,fes_five_string_order,forward_orientation",-0.4579201774173933,0.19354509994340297,0.004399120175964807,0,0,False,False,False,False,False
+skip144_fixed,alter_step_to_144,step_changed_only,-0.26700964463565346,0.002634567161663104,0.003599280143971206,8,8,True,True,True,True,True
+reversed72_no_forward,remove_forward_orientation,forward_orientation,-0.2667391445705633,0.0023640670965729416,0.003199360127974405,8,8,True,True,True,True,False
+linear_noncyclic,remove_cyclic_wrap,cyclic_order,-0.2653737977805045,0.0009987203065141559,0.003799240151969606,8,8,True,False,True,True,True
+quadrature90_fixed,alter_step_to_90,step_changed_only,-0.26517781961598325,0.0008027421419928849,0.004199160167966407,8,8,True,True,True,True,True
+half36_fixed,alter_step_to_36,step_changed_only,-0.264817854317667,0.00044277684367666215,0.0065986802639472104,8,8,True,True,True,True,True
+variable_step_structured,remove_fixed_step,"fixed_angular_step,forward_orientation",-0.26461527345654334,0.00024019598255298202,0.011797640471905619,8,8,True,True,False,True,False
+true72_forward,none,none,-0.26437507747399036,0.0,,8,8,True,True,True,True,True
+permuted_fes_order,remove_fes_five_string_order,fes_five_string_order,-0.2642600342546783,-0.00011504321931204986,0.7090581883623275,8,8,True,True,True,False,True

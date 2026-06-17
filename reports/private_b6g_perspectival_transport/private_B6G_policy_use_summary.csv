@@ -1,0 +1,9 @@
+true_policy_operator,true_policy_source,n_events,mean_bidirectional_transport,mean_A_to_B,mean_B_to_A,oracle_hit_rate
+O1_lag0_AB,state_mapping,107,-0.3030307585412067,-0.30303075854120665,-0.303030758541207,0.45794392523364486
+O3_A_C_boundary,global_fallback,1,,,,0.0
+O3_A_C_boundary,state_mapping,92,0.14786443373891414,0.1555129171959738,0.13473627972613772,0.010869565217391304
+O4_B_C_boundary,state_mapping,50,0.21910617789907058,0.2737777107888438,0.22051625054500454,0.06
+O6_phase_only,global_fallback,4,,,,0.0
+O6_phase_only,state_mapping,151,-0.09168991075231636,-0.1158424903951727,-0.02346826350218405,0.17880794701986755
+O7_suppress_event,global_fallback,2,,,,0.0
+O7_suppress_event,state_mapping,95,0.0,0.0,0.0,0.10526315789473684

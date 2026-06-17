@@ -1,0 +1,5 @@
+mode,conditions,robust_successes,strong_successes,mean_core_pass,mean_object_pass
+combined_c_fes_gmr72,24,0,0,0.08333333333333333,3.0
+fes_string_conditioned,24,0,0,0.4166666666666667,2.0
+gmr72_phase_conditioned,24,4,4,2.8333333333333335,2.6666666666666665
+linear_c_state,24,8,8,3.0,2.6666666666666665
