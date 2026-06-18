@@ -1,0 +1,6 @@
+feature,temporal_status,endpoint_adjacency_risk,used_in_levels,b72_role
+A_B,current observed A/B relation,medium,strict_past_ab_only; expanded_past_ab_only; operator_proxy_ab,ordinary A/B-history baseline continuity with B7.1a
+past A/B lags and rolling summaries,past-only within session,low,strict_past_ab_only; expanded_past_ab_only; causal_past_operator_estimator; lag_horizon_separated_o1o2,causally valid A/B-derived operator-estimator substrate
+O1_lag0_AB_raw,current-row operator proxy,high,operator_proxy_ab,endpoint-adjacent upper-bound style control
+O2_lag5_AB_raw,current-row lag-5 operator proxy as encoded in source table,high,operator_proxy_ab,endpoint-adjacent upper-bound style control
+lagged/rolled O1/O2 proxy summaries,prior rows only,medium,lag_horizon_separated_o1o2,tests whether O1/O2 advantage survives endpoint-adjacency removal

@@ -1,0 +1,178 @@
+# Stage B7.2 O1/O2 Control-Hierarchy Audit
+
+Status: executed after writing Stage_B7_2_preregistration.md and Stage_B7_2_revised_plan_email_draft.md.
+
+## Result
+
+- B7.2-primary-supported regimes: 11 / 24
+- regimes passing causal_past_operator_estimator: 20 / 24
+- regimes passing lag_horizon_separated_o1o2: 17 / 24
+- regimes passing endpoint-adjacent operator_proxy_ab: 0 / 24
+
+## Primary Classification
+
+mode,endpoint,direction,frozen_b6_supported,passes_strict_past_ab_only,passes_expanded_past_ab_only,passes_causal_past_operator_estimator,passes_lag_horizon_separated_o1o2,passes_operator_proxy_ab,b72_primary_supported,interpretation
+linear_c_state,z_reward,A_to_C_to_B,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+linear_c_state,z_reward,B_to_C_to_A,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+linear_c_state,rank_reward,A_to_C_to_B,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+linear_c_state,rank_reward,B_to_C_to_A,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+gmr72_phase_conditioned,gmr72_bridge_composite,A_to_C_to_B,False,True,True,True,True,False,False,not_frozen_b6_supported_or_incomplete
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,True,True,True,True,True,False,True,endpoint_adjacent_o1o2_boundary_not_simple_ab_history
+fes_string_conditioned,z_reward,A_to_C_to_B,False,False,False,True,False,False,False,not_frozen_b6_supported_or_incomplete
+fes_string_conditioned,z_reward,B_to_C_to_A,False,True,True,True,True,False,False,not_frozen_b6_supported_or_incomplete
+fes_string_conditioned,rank_reward,A_to_C_to_B,False,True,True,True,True,False,False,not_frozen_b6_supported_or_incomplete
+fes_string_conditioned,rank_reward,B_to_C_to_A,False,True,True,True,True,False,False,not_frozen_b6_supported_or_incomplete
+fes_string_conditioned,gmr72_bridge_composite,A_to_C_to_B,False,True,True,True,True,False,False,not_frozen_b6_supported_or_incomplete
+fes_string_conditioned,gmr72_bridge_composite,B_to_C_to_A,False,True,True,True,True,False,False,not_frozen_b6_supported_or_incomplete
+combined_c_fes_gmr72,z_reward,A_to_C_to_B,False,False,False,False,False,False,False,not_frozen_b6_supported_or_incomplete
+combined_c_fes_gmr72,z_reward,B_to_C_to_A,False,False,False,False,False,False,False,not_frozen_b6_supported_or_incomplete
+combined_c_fes_gmr72,rank_reward,A_to_C_to_B,False,False,False,True,False,False,False,not_frozen_b6_supported_or_incomplete
+combined_c_fes_gmr72,rank_reward,B_to_C_to_A,False,False,False,True,False,False,False,not_frozen_b6_supported_or_incomplete
+combined_c_fes_gmr72,gmr72_bridge_composite,A_to_C_to_B,False,False,False,False,False,False,False,not_frozen_b6_supported_or_incomplete
+combined_c_fes_gmr72,gmr72_bridge_composite,B_to_C_to_A,False,False,False,False,False,False,False,not_frozen_b6_supported_or_incomplete
+
+## Control-Level Comparison
+
+mode,endpoint,direction,control_level,mean_true_c,mean_control,effect_true_minus_control,p_true_greater,n_pairs,passes
+linear_c_state,z_reward,A_to_C_to_B,strict_past_ab_only,-0.6485108812946611,-0.7343208852912535,0.08581000399659246,0.0007998400319936012,145,True
+linear_c_state,z_reward,A_to_C_to_B,expanded_past_ab_only,-0.6485108812946611,-0.7343208852912535,0.08581000399659246,0.0011997600479904018,145,True
+linear_c_state,z_reward,A_to_C_to_B,causal_past_operator_estimator,-0.6485108812946611,-0.7391328161204427,0.09062193482578158,0.0003999200159968006,145,True
+linear_c_state,z_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.6485108812946611,-0.7365447366432295,0.08803385534856856,0.0007998400319936012,145,True
+linear_c_state,z_reward,A_to_C_to_B,operator_proxy_ab,-0.6485108812946611,-0.36334861819110453,-0.28516226310355647,1.0,145,False
+linear_c_state,z_reward,B_to_C_to_A,strict_past_ab_only,-0.6137270777317783,-0.7343208852912535,0.12059380755947517,0.0001999600079984003,145,True
+linear_c_state,z_reward,B_to_C_to_A,expanded_past_ab_only,-0.6137270777317783,-0.7343208852912535,0.12059380755947517,0.0003999200159968006,145,True
+linear_c_state,z_reward,B_to_C_to_A,causal_past_operator_estimator,-0.6137270777317783,-0.7391328161204427,0.1254057383886643,0.0001999600079984003,145,True
+linear_c_state,z_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.6137270777317783,-0.7365447366432295,0.12281765891145129,0.0001999600079984003,145,True
+linear_c_state,z_reward,B_to_C_to_A,operator_proxy_ab,-0.6137270777317783,-0.36334861819110453,-0.2503784595406738,1.0,145,False
+linear_c_state,rank_reward,A_to_C_to_B,strict_past_ab_only,-0.6064597123342564,-0.7050118793713457,0.09855216703708924,0.0007998400319936012,145,True
+linear_c_state,rank_reward,A_to_C_to_B,expanded_past_ab_only,-0.6064597123342564,-0.7050118793713457,0.09855216703708924,0.0001999600079984003,145,True
+linear_c_state,rank_reward,A_to_C_to_B,causal_past_operator_estimator,-0.6064597123342564,-0.7081912414870243,0.10173152915276781,0.0001999600079984003,145,True
+linear_c_state,rank_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.6064597123342564,-0.7078748720484688,0.10141515971421236,0.0007998400319936012,145,True
+linear_c_state,rank_reward,A_to_C_to_B,operator_proxy_ab,-0.6064597123342564,-0.3007770003191647,-0.3056827120150917,1.0,145,False
+linear_c_state,rank_reward,B_to_C_to_A,strict_past_ab_only,-0.5822649307585873,-0.7050118793713457,0.12274694861275838,0.0001999600079984003,145,True
+linear_c_state,rank_reward,B_to_C_to_A,expanded_past_ab_only,-0.5822649307585873,-0.7050118793713457,0.12274694861275838,0.0001999600079984003,145,True
+linear_c_state,rank_reward,B_to_C_to_A,causal_past_operator_estimator,-0.5822649307585873,-0.7081912414870243,0.12592631072843694,0.0001999600079984003,145,True
+linear_c_state,rank_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.5822649307585873,-0.7078748720484688,0.1256099412898815,0.0001999600079984003,145,True
+linear_c_state,rank_reward,B_to_C_to_A,operator_proxy_ab,-0.5822649307585873,-0.3007770003191647,-0.2814879304394226,1.0,145,False
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,strict_past_ab_only,-0.27285085973688367,-0.299663018979425,0.026812159242541298,0.011197760447910418,145,True
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,expanded_past_ab_only,-0.27285085973688367,-0.299663018979425,0.026812159242541298,0.01219756048790242,145,True
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,causal_past_operator_estimator,-0.27285085973688367,-0.30032190390007707,0.02747104416319349,0.010197960407918417,145,True
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,lag_horizon_separated_o1o2,-0.27285085973688367,-0.3000478098148858,0.027196950078002168,0.009998000399920015,145,True
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,operator_proxy_ab,-0.27285085973688367,-0.23770635075286214,-0.0351445089840215,0.9998000399920016,145,False
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,strict_past_ab_only,-0.26589267199459704,-0.299663018979425,0.033770346984827906,0.0023995200959808036,145,True
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,expanded_past_ab_only,-0.26589267199459704,-0.299663018979425,0.033770346984827906,0.004399120175964807,145,True
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,causal_past_operator_estimator,-0.26589267199459704,-0.30032190390007707,0.0344292319054801,0.003599280143971206,145,True
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,lag_horizon_separated_o1o2,-0.26589267199459704,-0.3000478098148858,0.03415513782028877,0.004999000199960008,145,True
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,operator_proxy_ab,-0.26589267199459704,-0.23770635075286214,-0.028186321241734903,0.9938012397520496,145,False
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,strict_past_ab_only,-0.6531129980927801,-0.7343208852912535,0.08120788719847338,0.003599280143971206,145,True
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,expanded_past_ab_only,-0.6531129980927801,-0.7343208852912535,0.08120788719847338,0.001999600079984003,145,True
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,causal_past_operator_estimator,-0.6531129980927801,-0.7391328161204427,0.0860198180276625,0.0021995600879824036,145,True
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.6531129980927801,-0.7365447366432295,0.08343173855044948,0.0013997200559888023,145,True
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,operator_proxy_ab,-0.6531129980927801,-0.36334861819110453,-0.28976437990167553,1.0,145,False
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,strict_past_ab_only,-0.6211451109858563,-0.7343208852912535,0.11317577430539716,0.0003999200159968006,145,True
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,expanded_past_ab_only,-0.6211451109858563,-0.7343208852912535,0.11317577430539716,0.0001999600079984003,145,True
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,causal_past_operator_estimator,-0.6211451109858563,-0.7391328161204427,0.11798770513458628,0.0003999200159968006,145,True
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.6211451109858563,-0.7365447366432295,0.11539962565737329,0.0003999200159968006,145,True
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,operator_proxy_ab,-0.6211451109858563,-0.36334861819110453,-0.2577964927947518,1.0,145,False
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,strict_past_ab_only,-0.611060240177722,-0.7050118793713457,0.0939516391936236,0.0007998400319936012,145,True
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,expanded_past_ab_only,-0.611060240177722,-0.7050118793713457,0.0939516391936236,0.0005998800239952009,145,True
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,causal_past_operator_estimator,-0.611060240177722,-0.7081912414870243,0.09713100130930216,0.0005998800239952009,145,True
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.611060240177722,-0.7078748720484688,0.09681463187074671,0.0003999200159968006,145,True
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,operator_proxy_ab,-0.611060240177722,-0.3007770003191647,-0.3102832398585573,1.0,145,False
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,strict_past_ab_only,-0.5858147542221935,-0.7050118793713457,0.11919712514915214,0.0001999600079984003,145,True
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,expanded_past_ab_only,-0.5858147542221935,-0.7050118793713457,0.11919712514915214,0.0001999600079984003,145,True
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,causal_past_operator_estimator,-0.5858147542221935,-0.7081912414870243,0.12237648726483069,0.0001999600079984003,145,True
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.5858147542221935,-0.7078748720484688,0.12206011782627524,0.0001999600079984003,145,True
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,operator_proxy_ab,-0.5858147542221935,-0.3007770003191647,-0.2850377539030289,1.0,145,False
+gmr72_phase_conditioned,gmr72_bridge_composite,A_to_C_to_B,strict_past_ab_only,-0.2751099825828901,-0.299663018979425,0.024553036396534833,0.01979604079184163,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,A_to_C_to_B,expanded_past_ab_only,-0.2751099825828901,-0.299663018979425,0.024553036396534833,0.017996400719856028,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,A_to_C_to_B,causal_past_operator_estimator,-0.2751099825828901,-0.30032190390007707,0.02521192131718703,0.015196960607878424,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,A_to_C_to_B,lag_horizon_separated_o1o2,-0.2751099825828901,-0.3000478098148858,0.024937827231995703,0.017996400719856028,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,A_to_C_to_B,operator_proxy_ab,-0.2751099825828901,-0.23770635075286214,-0.03740363183002798,0.9998000399920016,145,False
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,strict_past_ab_only,-0.2684102044177958,-0.299663018979425,0.03125281456162916,0.008198360327934412,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,expanded_past_ab_only,-0.2684102044177958,-0.299663018979425,0.03125281456162916,0.0065986802639472104,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,causal_past_operator_estimator,-0.2684102044177958,-0.30032190390007707,0.03191169948228135,0.0065986802639472104,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,lag_horizon_separated_o1o2,-0.2684102044177958,-0.3000478098148858,0.031637605397090034,0.007798440311937612,145,True
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,operator_proxy_ab,-0.2684102044177958,-0.23770635075286214,-0.03070385366493364,0.99500099980004,145,False
+fes_string_conditioned,z_reward,A_to_C_to_B,strict_past_ab_only,-0.6987493910311149,-0.7343208852912535,0.03557149426013859,0.05838832233553289,145,False
+fes_string_conditioned,z_reward,A_to_C_to_B,expanded_past_ab_only,-0.6987493910311149,-0.7343208852912535,0.03557149426013859,0.0631873625274945,145,False
+fes_string_conditioned,z_reward,A_to_C_to_B,causal_past_operator_estimator,-0.6987493910311149,-0.7391328161204427,0.04038342508932771,0.04359128174365127,145,True
+fes_string_conditioned,z_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.6987493910311149,-0.7365447366432295,0.037795345612114714,0.0595880823835233,145,False
+fes_string_conditioned,z_reward,A_to_C_to_B,operator_proxy_ab,-0.6987493910311149,-0.36334861819110453,-0.33540077284001035,1.0,145,False
+fes_string_conditioned,z_reward,B_to_C_to_A,strict_past_ab_only,-0.6878924566826311,-0.7343208852912535,0.046428428608622334,0.03259348130373925,145,True
+fes_string_conditioned,z_reward,B_to_C_to_A,expanded_past_ab_only,-0.6878924566826311,-0.7343208852912535,0.046428428608622334,0.03759248150369926,145,True
+fes_string_conditioned,z_reward,B_to_C_to_A,causal_past_operator_estimator,-0.6878924566826311,-0.7391328161204427,0.05124035943781145,0.020595880823835233,145,True
+fes_string_conditioned,z_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.6878924566826311,-0.7365447366432295,0.04865227996059845,0.02979404119176165,145,True
+fes_string_conditioned,z_reward,B_to_C_to_A,operator_proxy_ab,-0.6878924566826311,-0.36334861819110453,-0.32454383849152657,1.0,145,False
+fes_string_conditioned,rank_reward,A_to_C_to_B,strict_past_ab_only,-0.657570387593165,-0.7050118793713457,0.04744149177818069,0.02539492101579684,145,True
+fes_string_conditioned,rank_reward,A_to_C_to_B,expanded_past_ab_only,-0.657570387593165,-0.7050118793713457,0.04744149177818069,0.02399520095980804,145,True
+fes_string_conditioned,rank_reward,A_to_C_to_B,causal_past_operator_estimator,-0.657570387593165,-0.7081912414870243,0.05062085389385925,0.016596680663867228,145,True
+fes_string_conditioned,rank_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.657570387593165,-0.7078748720484688,0.050304484455303805,0.01919616076784643,145,True
+fes_string_conditioned,rank_reward,A_to_C_to_B,operator_proxy_ab,-0.657570387593165,-0.3007770003191647,-0.3567933872740003,1.0,145,False
+fes_string_conditioned,rank_reward,B_to_C_to_A,strict_past_ab_only,-0.6488932104865325,-0.7050118793713457,0.05611866888481322,0.007198560287942412,145,True
+fes_string_conditioned,rank_reward,B_to_C_to_A,expanded_past_ab_only,-0.6488932104865325,-0.7050118793713457,0.05611866888481322,0.0061987602479504095,145,True
+fes_string_conditioned,rank_reward,B_to_C_to_A,causal_past_operator_estimator,-0.6488932104865325,-0.7081912414870243,0.059298031000491774,0.007398520295940812,145,True
+fes_string_conditioned,rank_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.6488932104865325,-0.7078748720484688,0.05898166156193632,0.00639872025594881,145,True
+fes_string_conditioned,rank_reward,B_to_C_to_A,operator_proxy_ab,-0.6488932104865325,-0.3007770003191647,-0.3481162101673678,1.0,145,False
+fes_string_conditioned,gmr72_bridge_composite,A_to_C_to_B,strict_past_ab_only,-0.2809320730862229,-0.299663018979425,0.01873094589320204,0.026394721055788842,145,True
+fes_string_conditioned,gmr72_bridge_composite,A_to_C_to_B,expanded_past_ab_only,-0.2809320730862229,-0.299663018979425,0.01873094589320204,0.02979404119176165,145,True
+fes_string_conditioned,gmr72_bridge_composite,A_to_C_to_B,causal_past_operator_estimator,-0.2809320730862229,-0.30032190390007707,0.019389830813854234,0.027594481103779243,145,True
+fes_string_conditioned,gmr72_bridge_composite,A_to_C_to_B,lag_horizon_separated_o1o2,-0.2809320730862229,-0.3000478098148858,0.01911573672866291,0.01899620075984803,145,True
+fes_string_conditioned,gmr72_bridge_composite,A_to_C_to_B,operator_proxy_ab,-0.2809320730862229,-0.23770635075286214,-0.043225722333360764,1.0,145,False
+fes_string_conditioned,gmr72_bridge_composite,B_to_C_to_A,strict_past_ab_only,-0.2781034299650956,-0.299663018979425,0.02155958901432935,0.02499500099980004,145,True
+fes_string_conditioned,gmr72_bridge_composite,B_to_C_to_A,expanded_past_ab_only,-0.2781034299650956,-0.299663018979425,0.02155958901432935,0.022595480903819236,145,True
+fes_string_conditioned,gmr72_bridge_composite,B_to_C_to_A,causal_past_operator_estimator,-0.2781034299650956,-0.30032190390007707,0.022218473934981546,0.020595880823835233,145,True
+fes_string_conditioned,gmr72_bridge_composite,B_to_C_to_A,lag_horizon_separated_o1o2,-0.2781034299650956,-0.3000478098148858,0.02194437984979022,0.02439512097580484,145,True
+fes_string_conditioned,gmr72_bridge_composite,B_to_C_to_A,operator_proxy_ab,-0.2781034299650956,-0.23770635075286214,-0.040397079212233455,0.9998000399920016,145,False
+combined_c_fes_gmr72,z_reward,A_to_C_to_B,strict_past_ab_only,-0.6955771814545567,-0.7343208852912535,0.03874370383669669,0.08418316336732654,145,False
+combined_c_fes_gmr72,z_reward,A_to_C_to_B,expanded_past_ab_only,-0.6955771814545567,-0.7343208852912535,0.03874370383669669,0.09758048390321936,145,False
+combined_c_fes_gmr72,z_reward,A_to_C_to_B,causal_past_operator_estimator,-0.6955771814545567,-0.7391328161204427,0.04355563466588581,0.06998600279944012,145,False
+combined_c_fes_gmr72,z_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.6955771814545567,-0.7365447366432295,0.040967555188672795,0.07078584283143372,145,False
+combined_c_fes_gmr72,z_reward,A_to_C_to_B,operator_proxy_ab,-0.6955771814545567,-0.36334861819110453,-0.33222856326345224,1.0,145,False
+combined_c_fes_gmr72,z_reward,B_to_C_to_A,strict_past_ab_only,-0.7054201502399922,-0.7343208852912535,0.02890073505126135,0.1247750449910018,145,False
+combined_c_fes_gmr72,z_reward,B_to_C_to_A,expanded_past_ab_only,-0.7054201502399922,-0.7343208852912535,0.02890073505126135,0.12037592481503699,145,False
+combined_c_fes_gmr72,z_reward,B_to_C_to_A,causal_past_operator_estimator,-0.7054201502399922,-0.7391328161204427,0.03371266588045046,0.08598280343931214,145,False
+combined_c_fes_gmr72,z_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.7054201502399922,-0.7365447366432295,0.031124586403237463,0.10217956408718257,145,False
+combined_c_fes_gmr72,z_reward,B_to_C_to_A,operator_proxy_ab,-0.7054201502399922,-0.36334861819110453,-0.34207153204888757,1.0,145,False
+combined_c_fes_gmr72,rank_reward,A_to_C_to_B,strict_past_ab_only,-0.6582170980464946,-0.7050118793713457,0.04679478132485095,0.05798840231953609,145,False
+combined_c_fes_gmr72,rank_reward,A_to_C_to_B,expanded_past_ab_only,-0.6582170980464946,-0.7050118793713457,0.04679478132485095,0.05358928214357129,145,False
+combined_c_fes_gmr72,rank_reward,A_to_C_to_B,causal_past_operator_estimator,-0.6582170980464946,-0.7081912414870243,0.04997414344052951,0.04859028194361128,145,True
+combined_c_fes_gmr72,rank_reward,A_to_C_to_B,lag_horizon_separated_o1o2,-0.6582170980464946,-0.7078748720484688,0.04965777400197407,0.05338932213557288,145,False
+combined_c_fes_gmr72,rank_reward,A_to_C_to_B,operator_proxy_ab,-0.6582170980464946,-0.3007770003191647,-0.35744009772733004,1.0,145,False
+combined_c_fes_gmr72,rank_reward,B_to_C_to_A,strict_past_ab_only,-0.6677488350563425,-0.7050118793713457,0.037263044315003165,0.05858828234353129,145,False
+combined_c_fes_gmr72,rank_reward,B_to_C_to_A,expanded_past_ab_only,-0.6677488350563425,-0.7050118793713457,0.037263044315003165,0.0665866826634673,145,False
+combined_c_fes_gmr72,rank_reward,B_to_C_to_A,causal_past_operator_estimator,-0.6677488350563425,-0.7081912414870243,0.04044240643068173,0.04499100179964007,145,True
+combined_c_fes_gmr72,rank_reward,B_to_C_to_A,lag_horizon_separated_o1o2,-0.6677488350563425,-0.7078748720484688,0.04012603699212628,0.052589482103579284,145,False
+combined_c_fes_gmr72,rank_reward,B_to_C_to_A,operator_proxy_ab,-0.6677488350563425,-0.3007770003191647,-0.3669718347371778,1.0,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,A_to_C_to_B,strict_past_ab_only,-0.2853969711692958,-0.299663018979425,0.014266047810129145,0.10497900419916016,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,A_to_C_to_B,expanded_past_ab_only,-0.2853969711692958,-0.299663018979425,0.014266047810129145,0.10257948410317937,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,A_to_C_to_B,causal_past_operator_estimator,-0.2853969711692958,-0.30032190390007707,0.01492493273078134,0.08238352329534093,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,A_to_C_to_B,lag_horizon_separated_o1o2,-0.2853969711692958,-0.3000478098148858,0.014650838645590015,0.08938212357528494,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,A_to_C_to_B,operator_proxy_ab,-0.2853969711692958,-0.23770635075286214,-0.047690620416433654,1.0,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,B_to_C_to_A,strict_past_ab_only,-0.28663044908257795,-0.299663018979425,0.013032569896847025,0.14837032593481303,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,B_to_C_to_A,expanded_past_ab_only,-0.28663044908257795,-0.299663018979425,0.013032569896847025,0.13997200559888023,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,B_to_C_to_A,causal_past_operator_estimator,-0.28663044908257795,-0.30032190390007707,0.013691454817499222,0.1267746450709858,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,B_to_C_to_A,lag_horizon_separated_o1o2,-0.28663044908257795,-0.3000478098148858,0.013417360732307896,0.130373925214957,145,False
+combined_c_fes_gmr72,gmr72_bridge_composite,B_to_C_to_A,operator_proxy_ab,-0.28663044908257795,-0.23770635075286214,-0.04892409832971578,1.0,145,False
+
+## Interpretation Boundary
+
+B7.2 keeps C12 paused. A C12 reconnection test is not used to rescue any B7.2 primary failure.
+
+If true C beats causal_past_operator_estimator and lag_horizon_separated_o1o2 but not operator_proxy_ab, the strongest supported reading is that B7.1's failure reflects endpoint-adjacent O1/O2 proxy strength rather than simple A/B-history reducibility.
+
+## Settings
+
+- n_folds: 5
+- min_state_events: 8
+- temperature: 0.35
+- n_perm: 5000
+- alpha: 0.05
+- seed: 71110
+- gmr72_angle_scan_step: 0.2
