@@ -1,0 +1,16 @@
+component,frozen_regimes_tested,c_beats_component,component_bounds_c,mean_true_minus_component
+o1_lag0_only,11,0.0,11,-0.10035179434037457
+o2_lag5_only,11,0.0,11,-0.12087284851778532
+o1_o2_joint,11,0.0,11,-0.2145116286770407
+phase_removed_o1o2,11,0.0,11,-0.2145116286770407
+tfc_removed_o1o2,11,0.0,11,-0.2015876857631057
+side_shuffled_o1o2,11,11.0,0,0.06832167627892018
+memory_only_o1o2,11,11.0,0,0.08623385658766722
+residual_endpoint_o1o2,11,0.0,11,-0.21094844067170537
+classification:pure_ab_operator_proxy,11,,11,
+classification:phase_sensitive_proxy,11,,0,
+classification:tfc_compressed_proxy,11,,0,
+classification:side_directional_proxy,11,,11,
+classification:memory_proxy,11,,0,
+classification:residual_endpoint_proxy,11,,11,
+classification:compound_proxy,11,,0,
