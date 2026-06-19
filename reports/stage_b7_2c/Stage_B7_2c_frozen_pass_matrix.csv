@@ -1,0 +1,12 @@
+mode,endpoint,direction,directed_c,directed_c_direction_relabel,directed_c_direction_swapped,directed_c_side_shuffled,directed_provenance_c,directed_provenance_endpoint_pair_swapped,directed_provenance_side_swapped,directed_provenance_train_test_mismatch,directed_transport_closure_o1o2,endpoint_o1o2_reference,fixed_mask_control,scalar_c,static_scalar_closure
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,True,True,True,True,True,True,True,True,False,False,True,True,True
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,False,False,False,True,True,True,True,True,False,False,True,True,True
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,False,False,True,True,True,True,True,True,False,False,True,True,True
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,False,False,False,True,True,True,True,True,False,False,True,True,True
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,False,False,False,True,True,True,True,True,False,False,True,True,True
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,False,False,False,True,True,True,True,True,False,False,True,True,True
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,True,True,True,True,True,True,True,True,False,False,True,True,True
+linear_c_state,rank_reward,A_to_C_to_B,False,False,False,True,True,True,True,True,False,False,True,True,True
+linear_c_state,rank_reward,B_to_C_to_A,False,False,True,True,True,True,True,True,False,False,True,True,True
+linear_c_state,z_reward,A_to_C_to_B,False,False,False,True,True,True,True,True,False,False,True,True,True
+linear_c_state,z_reward,B_to_C_to_A,False,False,False,True,True,True,True,True,False,False,True,True,True

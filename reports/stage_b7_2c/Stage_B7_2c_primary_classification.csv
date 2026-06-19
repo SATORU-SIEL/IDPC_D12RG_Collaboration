@@ -1,0 +1,8 @@
+criterion,supported,basis
+directed_c_sufficient,False,directed_c bounds C 9/11
+directed_provenance_required,False,directed_provenance_c bounds C 0/11; directed_c bounds C 9/11
+endpoint_pairing_required,False,directed_provenance_c bounds C 0/11; endpoint_pair_swapped bounds C 0/11
+train_test_correspondence_required,False,directed_provenance_c bounds C 0/11; train_test_mismatch bounds C 0/11
+directed_transport_required,True,directed_transport_closure_o1o2 bounds C 11/11; static_scalar_closure lets C win 11/11
+fixed_mask_sufficient,False,fixed_mask_control bounds C 0/11
+unresolved_endpoint_structure,True,endpoint_o1o2_reference bounds C 11/11; directed_provenance_c bounds C 0/11
