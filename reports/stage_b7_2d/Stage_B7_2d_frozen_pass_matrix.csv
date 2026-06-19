@@ -1,0 +1,12 @@
+mode,endpoint,direction,directed_c_compact,directed_c_minimal,directed_c_with_endpoint_free_transport,directed_c_with_side_polarity,directed_transport_closure_o1o2,endpoint_o1o2_reference,full_directed_provenance,provenance_add_fes,provenance_add_phase_strength,provenance_add_tfc_memory,provenance_shuffled_control,regularized_directed_provenance
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,False,True,False,False,False,False,True,False,False,True,True,False
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False,False
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,rank_reward,A_to_C_to_B,False,True,False,False,False,False,True,False,False,True,True,False
+linear_c_state,rank_reward,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,z_reward,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,z_reward,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False

@@ -1,0 +1,10 @@
+criterion,supported,basis
+compact_directed_c_near_sufficient,True,directed_c_compact bounds C 11/11
+minimal_direction_sufficient,False,directed_c_minimal bounds C 9/11
+side_polarity_required,True,side_polarity bounds C 11/11; minimal bounds C 9/11
+endpoint_free_transport_required,False,endpoint_free_transport bounds C 11/11; side_polarity bounds C 11/11
+provenance_dilution_supported,False,compact bounds C 11/11; best provenance-addition bounds C 11/11
+wrong_provenance_supported,False,best provenance-addition bounds C 11/11; endpoint_o1o2_reference bounds C 11/11
+regularized_provenance_recovers_signal,True,regularized bounds C 11/11; compact bounds C 11/11
+endpoint_gap_persists,False,best endpoint-free bounds C 11/11; endpoint_o1o2_reference bounds C 11/11
+unresolved_directed_c_boundary,False,best endpoint-free bounds C 11/11; endpoint_o1o2_reference bounds C 11/11
