@@ -1,0 +1,13 @@
+criterion,supported,basis
+unsigned_side_gap_sufficient,True,unsigned_side_gap bounds C 11/11
+signed_ac_bc_contrast_sufficient,False,signed_ac_minus_bc bounds C 5/11
+polarity_sign_sufficient,False,polarity_sign_only bounds C 6/11
+polarity_magnitude_sufficient,True,polarity_magnitude_only bounds C 11/11
+direction_conditioned_polarity_required,False,direction_conditioned_side_polarity bounds C 5/11; signed bounds C 5/11; unsigned bounds C 11/11
+receiver_side_sufficient,True,receiver_side_only bounds C 11/11
+giver_side_sufficient,False,giver_side_only bounds C 5/11
+standpoint_polarity_supported,True,standpoint_polarity_preserved bounds C 11/11
+standpoint_inversion_breaks_signal,True,preserved bounds C 11/11; inverted bounds C 7/11
+phase_tfc_surrogate_supported,False,phase_tfc_matched_polarity_control bounds C 7/11
+endpoint_o1o2_effect_size_gap_persists,True,endpoint_o1o2 mean true-minus-control -0.2314
+unresolved_side_polarity_meaning,False,no endpoint-free side-polarity interpretation uniquely supported

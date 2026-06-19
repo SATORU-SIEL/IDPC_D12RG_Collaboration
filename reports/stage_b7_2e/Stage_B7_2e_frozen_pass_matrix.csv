@@ -1,0 +1,12 @@
+mode,endpoint,direction,direction_conditioned_side_polarity,endpoint_o1o2_reference,giver_side_only,phase_tfc_matched_polarity_control,polarity_magnitude_only,polarity_sign_only,receiver_side_only,signed_ac_minus_bc,standpoint_polarity_inverted,standpoint_polarity_preserved,unsigned_side_gap
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,True,False,True,False,False,True,False,True,False,False,False
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,True,False,True,True,False,True,False,True,True,False,False
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,True,False,True,True,False,True,False,True,True,False,False
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,True,False,True,False,False,False,False,True,False,False,False
+linear_c_state,rank_reward,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,rank_reward,B_to_C_to_A,True,False,True,True,False,True,False,True,True,False,False
+linear_c_state,z_reward,A_to_C_to_B,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,z_reward,B_to_C_to_A,True,False,True,True,False,True,False,True,True,False,False
