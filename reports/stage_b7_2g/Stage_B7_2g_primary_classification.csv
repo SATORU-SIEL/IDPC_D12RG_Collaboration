@@ -1,0 +1,10 @@
+criterion,supported,basis
+parity_mismatch_supported,True,"matched means [0.028916789042785364, 0.028787585657049697]; mismatched means [0.022324548395431524, 0.022315283393250382]; margin 0.005"
+receiver_only_explains_effect,True,receiver_only mean 0.0244; best mismatch 0.0223
+standpoint_only_explains_effect,False,best standpoint-only mean 0.0288; best mismatch 0.0223
+sign_or_magnitude_explains_effect,True,best sign/magnitude mean 0.0206; best mismatch 0.0223
+complexity_shuffle_explains_effect,False,best shuffled mean 0.0464; best mismatch 0.0223
+ab_exchange_consistent,True,ab_exchange bounds 11; mismatch bounds 11
+endpoint_o1o2_effect_size_gap_persists,True,endpoint mean -0.2417; endpoint-free min 0.0206
+parity_hypothesis_falsified,True,parity unsupported or simpler falsification arm explains the effect
+unresolved_parity_boundary,False,no decisive parity or falsification result

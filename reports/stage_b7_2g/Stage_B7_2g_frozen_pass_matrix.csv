@@ -1,0 +1,12 @@
+mode,endpoint,direction,ab_exchange_parity_mismatch,complexity_matched_shuffled_pair,endpoint_o1o2_reference,parity_label_shuffled,receiver_inverted__standpoint_inverted,receiver_inverted__standpoint_preserved,receiver_only,receiver_plus_magnitude,receiver_plus_standpoint_sign,receiver_preserved__standpoint_inverted,receiver_preserved__standpoint_preserved,standpoint_magnitude_only,standpoint_only_inverted,standpoint_only_preserved,standpoint_sign_only
+gmr72_phase_conditioned,gmr72_bridge_composite,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+gmr72_phase_conditioned,rank_reward,A_to_C_to_B,False,True,False,True,False,False,True,False,True,False,True,True,False,True,True
+gmr72_phase_conditioned,rank_reward,B_to_C_to_A,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+gmr72_phase_conditioned,z_reward,A_to_C_to_B,False,True,False,True,False,False,True,False,True,False,True,False,False,True,True
+gmr72_phase_conditioned,z_reward,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,gmr72_bridge_composite,A_to_C_to_B,False,True,False,True,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,gmr72_bridge_composite,B_to_C_to_A,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+linear_c_state,rank_reward,A_to_C_to_B,False,True,False,True,False,False,True,False,True,False,True,True,False,True,True
+linear_c_state,rank_reward,B_to_C_to_A,False,True,False,False,False,False,False,False,False,False,False,False,False,False,True
+linear_c_state,z_reward,A_to_C_to_B,False,True,False,True,False,False,True,False,True,False,True,False,False,True,True
+linear_c_state,z_reward,B_to_C_to_A,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
