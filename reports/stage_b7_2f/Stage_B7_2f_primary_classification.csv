@@ -1,0 +1,16 @@
+criterion,supported,basis
+receiver_standpoint_reconstruction_supported,False,receiver_standpoint_reconstruction bounds C 10/11 at tc_plus_k
+receiver_only_sufficient,True,receiver_side_only bounds C 11/11 at tc_plus_k
+standpoint_preservation_required,False,preserved mean -0.0038; inverted mean -0.0048 at tc_plus_k
+standpoint_inversion_breaks_signal,True,preserved bounds 11/11; inverted bounds 9/11
+shuffled_mapping_breaks_signal,False,reconstruction mean 0.0036; shuffled mean 0.0025 at tc_plus_k
+ab_exchange_predictable,False,ab_exchange bounds 9/11; mirrored bounds 11/11
+feature_construction_asymmetry_detected,False,normalization matched bounds 11/11; raw reconstruction bounds 10/11
+endpoint_o1o2_effect_size_gap_persists,True,endpoint_o1o2 mean -0.1865; endpoint-free min -0.0277
+stable_correspondence,False,receiver-standpoint reconstruction separates from shuffled/inverted at t1 and tc_plus_k
+recovery_dependent_correspondence,False,early arms are similar but separate by tc_plus_k
+transient_disruption_only,True,early separation disappears by tc_plus_k
+endpoint_only_effect,True,endpoint reference bounds C but endpoint-free reconstruction does not
+final_readout_sufficient,True,receiver-standpoint t1 0.0165; tc_plus_k 0.0036
+final_readout_insufficient,False,receiver-standpoint t1 0.0165; tc_plus_k 0.0036
+unresolved_receiver_standpoint_boundary,False,no receiver/standpoint trajectory classification decisively supported
