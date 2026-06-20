@@ -1,0 +1,9 @@
+criterion,supported,basis
+c12_incremental_gain_supported,True,"C12 beats no-topology, C8, reversed, and side-broken under at least one frozen C representation"
+h24_168_incremental_gain_supported,False,"canonical H24 168 beats no-topology, H24-144, and H24 degree-null under at least one frozen C representation"
+h24_216_differs_from_168,True,max absolute 216-vs-168 mean recovery difference = 0.006314
+coupled_receiver_standpoint_magnitude_bridge_supported,False,coupled C12 mean 0.028696; simpler best 0.031449
+endpoint_o1o2_reference_remains_upper_bound,False,endpoint best 0.029066; endpoint-free best 0.031449
+c12_reconnection_not_supported,False,no C12 topology arm satisfied the incremental decision rule
+h24_reconnection_not_supported,True,canonical H24 168 did not satisfy the incremental decision rule
+unresolved_c12_h24_boundary,False,neither C12 nor canonical H24 passed the preregistered incremental rule
