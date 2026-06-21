@@ -1,0 +1,53 @@
+c_representation,topology_arm,n_nodes,n_directed_edges,n_seed_events,mean_bounded_differentiated_recovery,sd_bounded_differentiated_recovery,topology_notes
+phi_eigen_energy_c,single_c12,12,48,132,0.09180867734276134,0.007325117444246934,"single C12(1,2)"
+phi_eigen_energy_c,paired_c12_90,24,96,264,-0.0068900624937023045,0.01225344629270587,"two separate C12 rings, second event stream +90 degrees"
+phi_eigen_energy_c,paired_c12_90_regulated,24,96,264,0.03537316256493702,0.009737030949285613,two separate C12 rings plus weak regulatory enforcement of +90 mean phase
+phi_eigen_energy_c,regulation_only_90,24,0,264,0.04433317417866142,0.010146018208872577,no architecture edges; weak regulatory enforcement of +90 mean phase only
+phi_eigen_energy_c,paired_c12_0,24,96,264,-0.005367834983461992,0.011161575920459355,"two separate C12 rings, second event stream +0 degrees"
+phi_eigen_energy_c,paired_c12_45_proxy,24,96,264,0.006132833872950644,0.016841933012075167,"two C12 rings, coarse +45-degree proxy by half-strength one-node offset"
+phi_eigen_energy_c,paired_c12_180,24,96,264,-0.0048147341157562295,0.019891636421683435,"two separate C12 rings, second event stream +180 degrees"
+phi_eigen_energy_c,paired_c12_90_cross_coupled,24,120,264,-0.004845301541291231,0.014494827502206343,two C12 rings plus quadrature cross-coupling edges
+phi_eigen_energy_c,paired_c12_90_cross_regulated,24,120,264,0.041807305365827184,0.00804581462558851,quadrature cross-coupling plus weak regulatory enforcement of +90 mean phase
+phi_eigen_energy_c,paired_c12_90_identity_coupled,24,120,264,-0.004164104995197472,0.013586784824025255,two C12 rings plus same-phase identity cross-coupling
+phi_eigen_energy_c,paired_c12_90_broken_factor12,24,120,264,-0.0054431282491682635,0.017336319374311373,two C12 rings with non-quadrature broken cross-coupling
+phi_eigen_energy_c,paired_c12_90_reversed_second,24,96,264,-0.005901538055478178,0.01685009634790881,"two C12 rings, second ring reversed, +90 event stream"
+phi_eigen_energy_c,h24_edge_suite,24,168,132,-0.007610168343112095,0.012156488273544838,H24 possible-factorisations 168-edge carrier; static edge-level operationalization
+phi_differential_invariant_c,single_c12,12,48,134,0.06710346824224193,0.006759590255975848,"single C12(1,2)"
+phi_differential_invariant_c,paired_c12_90,24,96,268,-0.007758585343172764,0.007147291459750967,"two separate C12 rings, second event stream +90 degrees"
+phi_differential_invariant_c,paired_c12_90_regulated,24,96,268,0.04944539597442377,0.007845303430173062,two separate C12 rings plus weak regulatory enforcement of +90 mean phase
+phi_differential_invariant_c,regulation_only_90,24,0,268,0.05129802434579874,0.01005947375473191,no architecture edges; weak regulatory enforcement of +90 mean phase only
+phi_differential_invariant_c,paired_c12_0,24,96,268,-0.0067944245220649775,0.007095509391131708,"two separate C12 rings, second event stream +0 degrees"
+phi_differential_invariant_c,paired_c12_45_proxy,24,96,268,-0.0016363231946124332,0.012673594605078302,"two C12 rings, coarse +45-degree proxy by half-strength one-node offset"
+phi_differential_invariant_c,paired_c12_180,24,96,268,-0.006818455121911881,0.006232052501869356,"two separate C12 rings, second event stream +180 degrees"
+phi_differential_invariant_c,paired_c12_90_cross_coupled,24,120,268,-0.008268887345599517,0.005728600485454018,two C12 rings plus quadrature cross-coupling edges
+phi_differential_invariant_c,paired_c12_90_cross_regulated,24,120,268,0.04367083322528633,0.00833670998321551,quadrature cross-coupling plus weak regulatory enforcement of +90 mean phase
+phi_differential_invariant_c,paired_c12_90_identity_coupled,24,120,268,-0.00453072647592176,0.010257988294135875,two C12 rings plus same-phase identity cross-coupling
+phi_differential_invariant_c,paired_c12_90_broken_factor12,24,120,268,-0.012134701347579678,0.008772402257338552,two C12 rings with non-quadrature broken cross-coupling
+phi_differential_invariant_c,paired_c12_90_reversed_second,24,96,268,-0.005298849213523746,0.007816526473451909,"two C12 rings, second ring reversed, +90 event stream"
+phi_differential_invariant_c,h24_edge_suite,24,168,134,-0.0066132441699787185,0.007821313427544194,H24 possible-factorisations 168-edge carrier; static edge-level operationalization
+receiver_only_c,single_c12,12,48,132,0.08240659189666107,0.01010611624789517,"single C12(1,2)"
+receiver_only_c,paired_c12_90,24,96,264,0.00043882218495937,0.018036124041222394,"two separate C12 rings, second event stream +90 degrees"
+receiver_only_c,paired_c12_90_regulated,24,96,264,0.05740904873688176,0.008056096060863467,two separate C12 rings plus weak regulatory enforcement of +90 mean phase
+receiver_only_c,regulation_only_90,24,0,264,0.05497650912753548,0.010986868200781978,no architecture edges; weak regulatory enforcement of +90 mean phase only
+receiver_only_c,paired_c12_0,24,96,264,-0.001791769902312985,0.020418872184648783,"two separate C12 rings, second event stream +0 degrees"
+receiver_only_c,paired_c12_45_proxy,24,96,264,-0.0061311508919846035,0.026426361559122622,"two C12 rings, coarse +45-degree proxy by half-strength one-node offset"
+receiver_only_c,paired_c12_180,24,96,264,-0.009284981945928847,0.011961272161858967,"two separate C12 rings, second event stream +180 degrees"
+receiver_only_c,paired_c12_90_cross_coupled,24,120,264,-0.005023118176595404,0.01554981581742912,two C12 rings plus quadrature cross-coupling edges
+receiver_only_c,paired_c12_90_cross_regulated,24,120,264,0.05894050372151579,0.007792984484211214,quadrature cross-coupling plus weak regulatory enforcement of +90 mean phase
+receiver_only_c,paired_c12_90_identity_coupled,24,120,264,-0.001810279699613293,0.016931144041573386,two C12 rings plus same-phase identity cross-coupling
+receiver_only_c,paired_c12_90_broken_factor12,24,120,264,-0.004238976893847162,0.017724544638850034,two C12 rings with non-quadrature broken cross-coupling
+receiver_only_c,paired_c12_90_reversed_second,24,96,264,0.0027228113442092847,0.019220769064305275,"two C12 rings, second ring reversed, +90 event stream"
+receiver_only_c,h24_edge_suite,24,168,132,-0.0023949501836676187,0.01164946791602746,H24 possible-factorisations 168-edge carrier; static edge-level operationalization
+receiver_standpoint_magnitude_c,single_c12,12,48,132,0.08466141711920937,0.009414384107166489,"single C12(1,2)"
+receiver_standpoint_magnitude_c,paired_c12_90,24,96,264,-0.00020111770851950167,0.012304784105205593,"two separate C12 rings, second event stream +90 degrees"
+receiver_standpoint_magnitude_c,paired_c12_90_regulated,24,96,264,0.03343767499812741,0.010207573332810492,two separate C12 rings plus weak regulatory enforcement of +90 mean phase
+receiver_standpoint_magnitude_c,regulation_only_90,24,0,264,0.0342263708617759,0.010286276854965328,no architecture edges; weak regulatory enforcement of +90 mean phase only
+receiver_standpoint_magnitude_c,paired_c12_0,24,96,264,0.0010684057430946348,0.008467872635469862,"two separate C12 rings, second event stream +0 degrees"
+receiver_standpoint_magnitude_c,paired_c12_45_proxy,24,96,264,0.006337587678515741,0.015096728894978649,"two C12 rings, coarse +45-degree proxy by half-strength one-node offset"
+receiver_standpoint_magnitude_c,paired_c12_180,24,96,264,-0.002211552999482227,0.010130659371659011,"two separate C12 rings, second event stream +180 degrees"
+receiver_standpoint_magnitude_c,paired_c12_90_cross_coupled,24,120,264,-0.00517992470877988,0.009578448616398231,two C12 rings plus quadrature cross-coupling edges
+receiver_standpoint_magnitude_c,paired_c12_90_cross_regulated,24,120,264,0.032404666616587356,0.009444665615559641,quadrature cross-coupling plus weak regulatory enforcement of +90 mean phase
+receiver_standpoint_magnitude_c,paired_c12_90_identity_coupled,24,120,264,0.01381438077085513,0.020593538532175444,two C12 rings plus same-phase identity cross-coupling
+receiver_standpoint_magnitude_c,paired_c12_90_broken_factor12,24,120,264,0.007641623525399123,0.01538302544951539,two C12 rings with non-quadrature broken cross-coupling
+receiver_standpoint_magnitude_c,paired_c12_90_reversed_second,24,96,264,-0.002661917890142093,0.010832413441169713,"two C12 rings, second ring reversed, +90 event stream"
+receiver_standpoint_magnitude_c,h24_edge_suite,24,168,132,-0.007320236498340821,0.009770248477791786,H24 possible-factorisations 168-edge carrier; static edge-level operationalization
