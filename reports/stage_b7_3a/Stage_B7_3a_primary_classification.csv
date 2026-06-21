@@ -1,0 +1,20 @@
+criterion,supported,basis
+c12_specificity_supported,True,"receiver_standpoint_magnitude_c + c12_1_2 beats no-topology, reversed, side-broken, shuffled, C10/C11/C13/C14 and passes topology-family FDR"
+c12_reconnection_without_specificity,False,C12 improves over no-topology but fails at least one specificity control
+c12_directionality_supported,True,c12_1_2 exceeds c12_reversed for frozen R_star
+c12_directionality_not_isolated,False,c12_reversed is equal or stronger than c12_1_2 for frozen R_star
+neighboring_cycle_explains_effect,False,at least one C10/C11/C13/C14 neighbouring cycle equals or exceeds C12 for frozen R_star
+side_correspondence_required,True,c12_1_2 exceeds c12_side_broken for frozen R_star
+endpoint_o1o2_reclaims_upper_bound,False,endpoint best 0.028595; endpoint-free best 0.030976
+scalar_c_rejected,True,scalar_c does not produce a significant C12 reconnection over controls
+unresolved_c12_specificity,False,frozen R_star C12 specificity was not established under the full B7.3a control set
+h24_collective_necessity_supported,False,"complete suite beats no-topology, removal, broken-junction, disconnected, and degree-null controls"
+h24_possible_only_sufficient,False,possible/static 168 arm is equal or stronger than complete-suite-coupled arm
+h24_available_but_not_required,True,removal or broken-junction controls did not degrade relative to complete-suite-coupled arm
+h24_junction_coupling_required,False,complete-suite-coupled exceeds one-junction-family-broken control
+h24_factorisation_removal_degrades,False,complete-suite-coupled exceeds one-factorisation-class-removed control
+h24_restoration_recovers,False,restoring the complete operational suite improves over both removal and broken-junction controls
+h24_static_topology_not_sufficient,True,current operational H24 edge-level suite did not satisfy collective necessity
+h24_168_current_carrier_not_supported,True,current edge-level H24 carrier failed the collective-necessity rule
+h24_216_diagnostic_only,True,216-edge C8-stitched object is retained only as a derived diagnostic arm
+unresolved_h24_boundary,True,H24 collective necessity remains unresolved under the current operational edge-level implementation
