@@ -1,0 +1,6 @@
+criterion,supported,basis
+endpoint_direct_relation_reduced,True,endpoint effect 0.00218515; receiver/standpoint 0.00344329; reverse 0.00547374
+receiver_standpoint_relation_competitor_live,True,receiver/standpoint relation best effect 0.00344329
+reverse_dominant_condition_competitor_live,True,reverse effect 0.00547374; relation 0.00344329; forward 0.00330795
+self_consistency_exceeds_reverse,True,self-consistent effect 0.00563332; reverse effect 0.00547374
+broad_completion_fractional_signature_present,True,B7.4g broad_group_completion_proxy precision is exact 1/4

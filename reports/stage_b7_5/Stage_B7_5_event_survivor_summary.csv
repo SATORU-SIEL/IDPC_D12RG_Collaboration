@@ -1,0 +1,13 @@
+representation,arm_family,n_events,survivor_event_fraction,survivor_strength_fraction,top4_labels_by_event_strength,top4_survivor_overlap,top4_precision_vs_registered,top4_recall_vs_registered,top4_jaccard_vs_registered,top4_matches_cyclotomic_x3
+endpoint_abs_relation,endpoint_direct_relation_only,131,0.16030534351145037,0.09124819492930245,P7|P8|P16|P24,0,0.0,0.0,0.0,False
+endpoint_lag_gap_relation,endpoint_direct_relation_only,131,0.16030534351145037,0.1925847384086233,P4|P10|P20|P24,1,0.25,0.25,0.14285714285714285,False
+endpoint_product_relation,endpoint_direct_relation_only,131,0.16030534351145037,0.07148929923287789,P7|P8|P16|P24,0,0.0,0.0,0.0,False
+receiver_only_relation,receiver_standpoint_relation_only,132,0.1590909090909091,0.18844096424910803,P3|P10|P13|P25,1,0.25,0.25,0.14285714285714285,False
+standpoint_only_relation,receiver_standpoint_relation_only,132,0.1590909090909091,0.17323897749676823,P10|P13|P20|P25,1,0.25,0.25,0.14285714285714285,False
+receiver_standpoint_relation,receiver_standpoint_relation_only,132,0.1590909090909091,0.17545789815710283,P3|P10|P13|P25,1,0.25,0.25,0.14285714285714285,False
+forward_ab_to_c_condition,forward_only_condition,132,0.1590909090909091,0.1823286829817214,P3|P10|P13|P25,1,0.25,0.25,0.14285714285714285,False
+reverse_c_to_ab_condition,reverse_only_condition,132,0.1590909090909091,0.1685045237897222,P13|P20|P24|P25,0,0.0,0.0,0.0,False
+self_consistent_min_condition,self_consistent_condition,132,0.1590909090909091,0.17754227946863166,P3|P10|P13|P25,1,0.25,0.25,0.14285714285714285,False
+self_consistent_product_condition,self_consistent_condition,132,0.1590909090909091,0.19787656875457485,P10|P12|P13|P25,1,0.25,0.25,0.14285714285714285,False
+self_consistent_rstar_condition,self_consistent_condition,132,0.1590909090909091,0.17461867504757617,P10|P13|P20|P25,1,0.25,0.25,0.14285714285714285,False
+scalar_c,scalar_mediator_control,134,0.16417910447761194,0.15480117207124816,P4|P13|P14|P16,0,0.0,0.0,0.0,False
