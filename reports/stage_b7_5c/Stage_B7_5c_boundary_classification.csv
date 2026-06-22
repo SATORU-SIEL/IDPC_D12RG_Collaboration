@@ -1,0 +1,7 @@
+criterion,supported,basis
+primary_c12_prefers_full_self,False,"C12 full-minus-reverse mean delta -0.00359445; CI [-0.00415657, -0.00296881]"
+primary_c12_stable_full_self,False,C12 stable_left_win=False; left_win_fraction 0.083
+primary_c12_stable_reverse,True,C12 stable_right_win=True; left_win_fraction 0.083
+stability_boundary_present,True,stable_full=1; stable_reverse=11; boundary_or_flip=3
+stable_full_topologies,True,c13
+stable_reverse_topologies,True,no_topology_baseline|c12_1_2|c12_reversed|c12_side_broken|c12_shuffled|c11|degree_matched_null|ring_share_c12_plus_5|ring_share_c12_plus_7|ring_share_c12_plus_10|ring_share_c12_plus_11
