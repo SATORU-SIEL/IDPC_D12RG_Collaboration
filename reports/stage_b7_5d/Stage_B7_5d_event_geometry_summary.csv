@@ -1,0 +1,6 @@
+representation_arm,reverse_only_c_to_ab_top4,reverse_only_c_to_ab_top4_survivor_overlap,reverse_only_c_to_ab_survivor_strength_fraction,reverse_only_c_to_ab_phase_concentration,full_self_consistent_rstar_top4,full_self_consistent_rstar_top4_survivor_overlap,full_self_consistent_rstar_survivor_strength_fraction,full_self_consistent_rstar_phase_concentration,c_to_ab_receiver_only_top4,c_to_ab_receiver_only_top4_survivor_overlap,c_to_ab_receiver_only_survivor_strength_fraction,c_to_ab_receiver_only_phase_concentration,c_to_ab_magnitude_only_top4,c_to_ab_magnitude_only_top4_survivor_overlap,c_to_ab_magnitude_only_survivor_strength_fraction,c_to_ab_magnitude_only_phase_concentration,c_to_ab_standpoint_only_top4,c_to_ab_standpoint_only_top4_survivor_overlap,c_to_ab_standpoint_only_survivor_strength_fraction,c_to_ab_standpoint_only_phase_concentration
+reverse_only_c_to_ab,P13|P20|P24|P25,0.0,0.1685045237897222,0.9892719713297378,,,,,,,,,,,,,,,,
+full_self_consistent_rstar,,,,,P10|P13|P20|P25,1.0,0.17461867504757617,0.9877699551988811,,,,,,,,,,,,
+c_to_ab_receiver_only,,,,,,,,,P13|P17|P20|P24,0.0,0.169646224942726,0.9917686476748779,,,,,,,,
+c_to_ab_magnitude_only,,,,,,,,,,,,,P10|P13|P20|P25,1.0,0.17323897749676823,0.987982521185344,,,,
+c_to_ab_standpoint_only,,,,,,,,,,,,,,,,,P10|P13|P20|P25,1.0,0.17323897749676823,0.987982521185344

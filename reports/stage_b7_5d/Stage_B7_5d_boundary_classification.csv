@@ -1,0 +1,8 @@
+criterion,supported,basis
+c13_full_self_reproduces,True,c13 classification=full-stable
+c12_reverse_reproduces,True,c12 classification=reverse-stable
+c10_c14_boundary_reproduce,False,c10=boundary; c14=full-stable
+topology_dependent_boundary_present,True,full=17; reverse=12; boundary=16
+stable_full_topologies,True,c13|c14|c16|c10_side_broken|c10_ring_share_7|c12_side_broken|c13_reversed|c13_side_broken|c13_degree_null|c13_edge_count_null|c13_ring_share_5|c13_ring_share_7|c13_ring_share_10|c13_ring_share_11|c14_shuffled|c14_degree_null|c14_edge_count_null
+stable_reverse_topologies,True,c8|c12|c10_degree_null|c12_reversed|c12_shuffled|c12_degree_null|c12_ring_share_5|c12_ring_share_7|c12_ring_share_10|c12_ring_share_11|c14_ring_share_7|c14_ring_share_10
+boundary_topologies,True,c9|c10|c11|c15|c10_reversed|c10_shuffled|c10_edge_count_null|c10_ring_share_5|c10_ring_share_10|c10_ring_share_11|c12_edge_count_null|c13_shuffled|c14_reversed|c14_side_broken|c14_ring_share_5|c14_ring_share_11
