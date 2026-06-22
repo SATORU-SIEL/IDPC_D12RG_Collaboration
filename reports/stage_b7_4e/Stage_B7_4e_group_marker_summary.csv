@@ -1,0 +1,4 @@
+survival_group,n_folds,mean_c12,mean_positive_specificity_controls,mean_min_specificity_margin,rate_cyclotomic_recognized_marker,rate_x3_interaction_marker,rate_complement_direction_marker,rate_full_mod12_generator,rate_high_order_mod24_generator,rate_group_completion_proxy,rate_any_arithmetic_marker
+collapsed_or_weak,16,-0.0040430924322452455,1.6875,-0.012579638113708186,0.0,0.0,0.1875,0.375,0.5625,0.5625,0.5625
+registered_survivor,4,0.0046614604669604496,7.5,0.00022668647397205003,0.5,0.5,0.75,0.25,0.5,1.0,1.0
+intermediate,6,0.002374158286545825,5.166666666666667,-0.007844216948922733,0.0,0.0,0.0,0.3333333333333333,0.5,0.5,0.5
