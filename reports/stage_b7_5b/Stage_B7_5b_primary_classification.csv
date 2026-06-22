@@ -1,0 +1,5 @@
+criterion,supported,basis
+c_to_ab_component_localized,False,best arm full_self_consistent_rstar effect 0.00613871
+reverse_composite_remains_above_full_self,False,reverse composite 0.00575399; full self 0.00613871
+topology_specificity_for_best_arm,True,best arm 9 positive controls; min margin 0.00239218
+fractional_secondary_colocalizes,True,"1/4 or 2/11 target appears near P10/5-or-10, reversed C12, or ring-sharing tags"
