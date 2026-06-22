@@ -1,0 +1,6 @@
+criterion,supported,basis
+self_consistency_increment_over_reverse,False,full effect 0.00501864; reverse effect 0.00629665
+best_forward_component_identified,False,best arm reverse_plus_standpoint_ab increment -0.000187535
+topology_specificity_present,True,full self arm 10 positive controls; min margin 0.00112438
+fractional_signatures_as_diagnostics_localized,True,fractional targets detected with topology/survivor resonance tags
+two_eleven_anomaly_tracked,True,at least one metric is within 0.01 of 2/11

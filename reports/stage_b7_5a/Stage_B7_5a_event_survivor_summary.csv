@@ -1,0 +1,11 @@
+representation_arm,arm_family,n_events,survivor_event_fraction,survivor_strength_fraction,top4_labels_by_event_strength,top4_survivor_overlap,top4_precision_vs_registered,top4_recall_vs_registered,top4_jaccard_vs_registered
+reverse_only_c_to_ab,reverse_only,132,0.1590909090909091,0.1685045237897222,P13|P20|P24|P25,0,0.0,0.0,0.0
+reverse_plus_endpoint_direct_ab,reverse_plus_endpoint_direct_ab,131,0.16030534351145037,0.1384644347556814,P8|P17|P20|P24,0,0.0,0.0,0.0
+reverse_plus_receiver_ab,reverse_plus_receiver_ab,132,0.1590909090909091,0.1842883634733125,P3|P10|P13|P25,1,0.25,0.25,0.14285714285714285
+reverse_plus_standpoint_ab,reverse_plus_standpoint_ab,132,0.1590909090909091,0.1723608599546911,P10|P13|P20|P25,1,0.25,0.25,0.14285714285714285
+reverse_plus_magnitude_ab,reverse_plus_magnitude_ab,132,0.1590909090909091,0.1723608599546911,P10|P13|P20|P25,1,0.25,0.25,0.14285714285714285
+reverse_plus_receiver_standpoint_ab,reverse_plus_receiver_standpoint_ab,132,0.1590909090909091,0.1776584420665357,P3|P10|P13|P25,1,0.25,0.25,0.14285714285714285
+reverse_plus_receiver_magnitude_ab,reverse_plus_receiver_magnitude_ab,132,0.1590909090909091,0.1776584420665357,P3|P10|P13|P25,1,0.25,0.25,0.14285714285714285
+reverse_plus_standpoint_magnitude_ab,reverse_plus_standpoint_magnitude_ab,132,0.1590909090909091,0.1726609689624267,P10|P13|P20|P25,1,0.25,0.25,0.14285714285714285
+reverse_plus_receiver_standpoint_magnitude_ab,reverse_plus_receiver_standpoint_magnitude_ab,132,0.1590909090909091,0.176072329836919,P10|P13|P20|P25,1,0.25,0.25,0.14285714285714285
+full_self_consistent_rstar,full_self_consistent_rstar,132,0.1590909090909091,0.17461867504757617,P10|P13|P20|P25,1,0.25,0.25,0.14285714285714285

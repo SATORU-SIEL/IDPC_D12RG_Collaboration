@@ -1,0 +1,11 @@
+representation_arm,arm_family,increment_vs_reverse_c12,increment_vs_reverse_effect_no_topology,increment_vs_reverse_specificity_controls,top4_survivor_overlap,survivor_strength_fraction
+reverse_only_c_to_ab,reverse_only,0.0,0.0,0,0,0.1685045237897222
+reverse_plus_standpoint_ab,reverse_plus_standpoint_ab,-0.0025763171336209874,-0.00018753490292915814,0,1,0.1723608599546911
+reverse_plus_magnitude_ab,reverse_plus_magnitude_ab,-0.002963726385156854,-0.0010012007790350282,0,1,0.1723608599546911
+reverse_plus_standpoint_magnitude_ab,reverse_plus_standpoint_magnitude_ab,-0.0023220487431699043,-0.0010988130066699221,0,1,0.1726609689624267
+full_self_consistent_rstar,full_self_consistent_rstar,-0.0032808863313972224,-0.0012780119801077162,1,1,0.17461867504757617
+reverse_plus_receiver_standpoint_ab,reverse_plus_receiver_standpoint_ab,-0.0054434256409308344,-0.0032641829758870387,0,1,0.1776584420665357
+reverse_plus_endpoint_direct_ab,reverse_plus_endpoint_direct_ab,-0.003568161736728987,-0.003944265420545597,1,0,0.1384644347556814
+reverse_plus_receiver_magnitude_ab,reverse_plus_receiver_magnitude_ab,-0.005457488495437569,-0.0040679532163150275,0,1,0.1776584420665357
+reverse_plus_receiver_standpoint_magnitude_ab,reverse_plus_receiver_standpoint_magnitude_ab,-0.0049099391208605805,-0.004406383019315903,0,1,0.176072329836919
+reverse_plus_receiver_ab,reverse_plus_receiver_ab,-0.00659534463626996,-0.005036960111373046,0,1,0.1842883634733125
