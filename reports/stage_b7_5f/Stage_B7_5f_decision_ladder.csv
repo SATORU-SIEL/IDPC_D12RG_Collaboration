@@ -1,0 +1,13 @@
+level,criterion,supported,basis
+0,exact_fraction_hits_present,True,close_hits=603; unique=139
+1,denominator_universe_recovered_for_some_hits,True,recovered_hits=89
+1,focus_fractions_remain_visible,True,focus_hits=28; fractions=1/2|1/4|2/11|3/4
+2,full_or_punctured_projector_rank_candidate_exists,True,rank_candidate_hits=160
+2,registered_c_side_localization_exists,True,registered_target_hits=263
+2,one_quarter_stable_near_5_or_10_proxy,True,one_quarter_5_or_10_hits=3
+2,two_eleven_is_traceable_but_not_c12_punctured_projector,True,two_eleven_hits=2; c12_punctured_candidates=0
+3,member_structure_candidate_present,True,member_candidate_hits=160
+4,explicit_projector_idempotence_tested,False,B7.5f classifies projector compatibility from fraction/carrier arithmetic only; no empirical P matrix is constructed here.
+5,explicit_topology_commutator_tested,False,No empirical P/T commutator is constructed in B7.5f; this is deferred to a later matrix-level audit.
+6,restricted_trace_determinant_confirmed,False,Trace/determinant candidates are annotated but not confirmed without a constructed restricted topology block.
+7,perturbation_defeats_matched_controls,False,B7.5f reuses B7.5d perturbation labels; it does not yet run new matched projector controls.
